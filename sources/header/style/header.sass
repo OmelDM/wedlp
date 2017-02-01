@@ -1,0 +1,57 @@
+@import '../../style/common'
+
+.header
+
+.navigation
+
+  &_large
+    display: none
+
+    @media (min-width: 931px)
+      display: block
+      color: red
+
+  &_small
+    display: flex
+    justify-content: space-between
+    padding: 12px 20px
+    min-width: 320px
+    max-width:
+
+    @media (min-width: 768px)
+      padding: 20px 40px
+
+    @media (min-width: 930px)
+      display: none
+
+.logo
+  color: $main-red-color
+  border: 1px solid $main-red-color
+  border-radius: 50%
+  background: $main-yellow-color
+  width: 36px
+  height: 36px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  @media (min-width: 768px)
+    width: 45px
+    height: 45px
+
+  &__text
+    font-size: 13px
+    font-weight: 700
+    font-family: $main-serif-font
+
+  &__ampersand
+    font-size: 9px
+    font-family: $main-cursive-font
+    line-height: 16px
+
+.menu
+
+  svg
+    width: 36px
+    height: 36px
+    fill: $menu-color
