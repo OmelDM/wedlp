@@ -10,7 +10,7 @@ $sizeM: 960px
   // border: 2px solid green
   @media (min-width: $sizeM)
     background: $main-yellow-color
-    
+
   &_large
     display: none
 
@@ -75,16 +75,22 @@ $sizeM: 960px
   align-items: center
 
   &__item
-    padding: 41px 15px
+    margin: 41px 0
 
     &:first-child
       padding-left: 0
     &:last-child
       padding-right: 0
 
+    &_center
+      margin: 0 10px
+      padding: 0
+
   &__link
+    padding: 15px
     color: $nav-item-color
     text-decoration: none
 
     &:hover
-      border-bottom: 1px solid $nav-item-color
+      background: $main-red-color
+      color: $nav-link-hover-color

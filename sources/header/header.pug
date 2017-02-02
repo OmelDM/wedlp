@@ -22,11 +22,13 @@ mixin logo
 
 mixin navigationItem(item, index)
   - var indexCenter = Math.floor(navList.length / 2);
-  li.navigation__item
+
     if index == indexCenter
-      +logo
-      +navigationItem(item)
+      li.navigation__item.navigation__item_center
+        +logo
+        +navigationItem(item)
     else
+      li.navigation__item
         a.navigation__link(
           href=item.href
           title=item.title
