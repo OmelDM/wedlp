@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
-	del = require('del');
+	del = require('del'),
+	deploy = require('gulp-gh-pages');
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = './sources/**/*.html'
@@ -19,7 +20,12 @@ var BUILD_DIR = './build/'
 	, FONTS_DIR = './sources/fonts/*';
 
 gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'img', 'fonts', 'connect', 'watch']);
-gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'img', 'fonts', 'connect', 'watch']);
+gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'img', 'fonts']);
+
+gulp.task('deploy', ['release'], function () {
+  return gulp.src("./build/**/*")
+    .pipe(deploy())
+});
 
 gulp.task('clean', function() {
 	del(BUILD_DIR);
