@@ -1,10 +1,12 @@
-@import '../../style/common'
+@import '../../style/variables'
 
 $sizeS: 768px
 $sizeM: 960px
 
 .header-container
   // border: 1px solid red
+  background: $main-bg-color
+  z-index: 199
 
 .header
   // border: 2px solid green
@@ -20,10 +22,9 @@ $sizeM: 960px
 
   &_small
     display: flex
+    flex-wrap: wrap
     justify-content: space-between
     padding: 12px 20px
-    min-width: 320px
-    max-width:
 
     @media (min-width: $sizeS)
       padding: 20px 40px
@@ -57,13 +58,27 @@ $sizeM: 960px
     line-height: 16px
 
 .menu
-
-  svg
-    width: 36px
-    height: 36px
-    fill: $menu-color
+  width: 36px
+  height: 36px
+  fill: $menu-color
 
 .navigation-container
+
+  &_small
+    flex-basis: 100%
+    transform: translateY(-426px) // navigation-container heigth + header-container height
+    transition: transform .4s ease
+    z-index: 99
+    position: fixed
+    left: 0
+    right: 0
+    background: $main-bg-color
+
+    @media (min-width: $sizeM)
+      display: none
+
+  &_active
+    transform: translateY(0)
 
 .navigation
   list-style-type: none
@@ -73,6 +88,13 @@ $sizeM: 960px
   display: flex
   justify-content: center
   align-items: center
+
+  &_small
+    margin: 0 auto
+    max-width: 320px
+    flex-direction: column
+    align-items: stretch
+    font-size: 12px
 
   &__item
     margin: 41px 0
@@ -86,11 +108,33 @@ $sizeM: 960px
       margin: 0 10px
       padding: 0
 
+    &_small
+      margin: 0
+      text-align: center
+      border-bottom: 1px solid $nav-border-color
+
+      &:last-child
+        border-bottom: none
+
   &__link
     padding: 15px
     color: $nav-item-color
     text-decoration: none
 
+    &_small
+      padding: 10px 0
+      display: inline-block
+      width: 100%
+      height: 100%
+
     &:hover
       background: $main-red-color
       color: $nav-link-hover-color
+
+.menu
+  cursor: pointer
+
+  &__icon
+
+    &_close
+      display: none

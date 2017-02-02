@@ -23,25 +23,39 @@ mixin logo
 mixin navigationItem(item, index)
   - var indexCenter = Math.floor(navList.length / 2);
 
-    if index == indexCenter
-      li.navigation__item.navigation__item_center
-        +logo
-        +navigationItem(item)
-    else
-      li.navigation__item
-        a.navigation__link(
-          href=item.href
-          title=item.title
-        )= item.title
+  if index == indexCenter
+    li.navigation__item.navigation__item_center
+      +logo
+      +navigationItem(item)
+  else
+    li.navigation__item
+      a.navigation__link(
+        href=item.href
+        title=item.title
+      )= item.title
+
+mixin navigationItemSmall(item, index)
+  li.navigation__item.navigation__item_small
+    a.navigation__link.navigation__link_small(
+      href=item.href
+      title=item.title
+    )= item.title
 
 //- CONTENT
 header.header-container
   .header.header_small
     +logo
     .menu
-      include ../svg/burger.svg
+      .menu__icon.menu__icon_burger
+        include ../svg/burger.svg
+      .menu__icon.menu__icon_close
+        include ../svg/close.svg
   .header.header_large
     nav.navigation-container
       ul.navigation
         each navItem, index in navList
           +navigationItem(navItem, index)
+nav.navigation-container.navigation-container_small
+  ul.navigation.navigation_small
+    each navItem, index in navList
+      +navigationItemSmall(navItem, index)
