@@ -1,13 +1,20 @@
 @import '../../style/common'
 
+$sizeS: 768px
+$sizeM: 960px
+
+.header-container
+  // border: 1px solid red
+
 .header
-
-.navigation
-
+  // border: 2px solid green
+  @media (min-width: $sizeM)
+    background: $main-yellow-color
+    
   &_large
     display: none
 
-    @media (min-width: 931px)
+    @media (min-width: $sizeM)
       display: block
       color: red
 
@@ -18,10 +25,10 @@
     min-width: 320px
     max-width:
 
-    @media (min-width: 768px)
+    @media (min-width: $sizeS)
       padding: 20px 40px
 
-    @media (min-width: 930px)
+    @media (min-width: $sizeM)
       display: none
 
 .logo
@@ -55,3 +62,29 @@
     width: 36px
     height: 36px
     fill: $menu-color
+
+.navigation-container
+
+.navigation
+  list-style-type: none
+  font-family: $main-sans-serif-font
+  font-size: 13px
+  font-weight: 600
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &__item
+    padding: 41px 15px
+
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+
+  &__link
+    color: $nav-item-color
+    text-decoration: none
+
+    &:hover
+      border-bottom: 1px solid $nav-item-color
