@@ -1,0 +1,89 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.counter-container
+  display: flex
+  justify-content: center
+
+  @media (min-width: $sizeM)
+    background: $main-yellow-color
+
+.counter
+  margin-top: 60px
+  margin-bottom: 60px
+  font-family: $main-sans-serif-font
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  @media (min-width: $sizeS)
+    margin-top: 90px
+    margin-bottom: 80px
+
+  &__title
+    @extend .title
+    margin-bottom: 26px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 30px
+
+  &__description
+    color: $dark-gray-color
+    font-size: 16px
+    line-height: 1.4
+    margin-bottom: 30px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 45px
+
+  &__time
+    list-style-type: none
+    max-width: 214px
+    display: flex
+    flex-wrap: wrap
+
+    @media (min-width: $sizeS)
+      max-width: 478px
+
+  &__item
+    width: 80px
+    margin: 0 25px 30px
+
+    &:nth-child(odd)
+      margin-left: 0
+
+    &:nth-child(even)
+      margin-right: 0
+
+    @media (min-width: $sizeS)
+      margin-bottom: 0
+
+      &:nth-child(odd)
+        margin-left: 25px
+
+      &:nth-child(even)
+        margin-right: 25px
+
+      &:first-child
+        margin-left: 0
+
+      &:last-child
+        margin-right: 0
+
+  &__value
+    color: $main-red-color
+    background: $main-yellow-color
+    font-size: 30px
+    line-height: 0.75
+    height: 90px
+    margin-bottom: 20px
+    border: 1px solid $main-red-color
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+  &__measurement
+    color: lighten($dark-gray-color, 20)
+    font-size: 14px
