@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('.menu__icon_close').hide();
 
   $('.menu').click(function() {
     $('.navigation-container_small').toggleClass('navigation-container_active');
