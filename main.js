@@ -6,8 +6,10 @@ function main () {
 function block (argument) {
   // body...
 }
+function block (argument) {
+  // body...
+}
 $(document).ready(function() {
-  $('.menu__icon_close').hide();
 
   $('.menu').click(function() {
     $('.navigation-container_small').toggleClass('navigation-container_active');
@@ -21,3 +23,7 @@ $(document).ready(function() {
     }
   });
 });
+
+function block (argument) {
+  // body...
+}
