@@ -16,7 +16,7 @@ var BUILD_DIR = './build/'
 	, TEMPLATES_WATCH_PATH = './sources/**/*.pug'
 	, STYLESHEETS_PATHs = ['./sources/**/*.scss', './sources/**/*.sass', './sources/**/*.css']
 	, JS_PATH = './sources/**/*.js'
-	, IMG_DIR = './sources/i/*'
+	, IMG_DIR = './sources/img/*'
 	, FONTS_DIR = './sources/fonts/*';
 
 gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'img', 'fonts', 'connect', 'watch']);
@@ -72,7 +72,7 @@ gulp.task('js', function() {
 
 gulp.task('img', function() {
 	return gulp.src(IMG_DIR)
-		.pipe(gulp.dest(BUILD_DIR + 'i/'))
+		.pipe(gulp.dest(BUILD_DIR + 'img/'))
 		.pipe(connect.reload());
 });
 
