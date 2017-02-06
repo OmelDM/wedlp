@@ -13,18 +13,36 @@
     about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Кирилла законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
   };
 
-mixin person(personObj)
-  .person
-    .person__photo
-      img.person__img(src=personObj.photo)
-    .person__name
-      = personObj.name
-    .person__title
-      = personObj.title
-    .person__about
-      = personObj.about
-
 section.about-container
   .about
-    +person(malePerson)
-    +person(femalePerson)
+    .person.person_male
+      .person__photo.person__photo_male
+        img.person__img(src=malePerson.photo)
+      .person__title.person__title_male
+        .person__transformed.person__transformed_male
+          = malePerson.title
+      .person__details.person__details_male
+        .person__name
+          = malePerson.name
+        .person__title
+          = malePerson.title
+        .person__about
+          = malePerson.about
+        .person__social.person__social_male
+          include ../social/social.pug
+
+    .person.person_female
+      .person__photo.person__photo_female
+        img.person__img(src=femalePerson.photo)
+      .person__title.person__title_female
+        .person__transformed.person__transformed_female
+          = femalePerson.title
+      .person__details.person__details_female
+        .person__name
+          = femalePerson.name
+        .person__title
+          = femalePerson.title
+        .person__about
+          = femalePerson.about
+        .person__social.person__social_female
+          include ../social/social.pug

@@ -2,6 +2,7 @@
 
 $about-max-width: 460px
 $about-padding: 15px
+$sizeM: 1025px
 
 .about-container
   padding-bottom: 63px
@@ -20,6 +21,9 @@ $about-padding: 15px
   max-width: $about-max-width + $about-padding * 2
   margin: 0 auto
 
+  @media (min-width: $sizeM)
+    max-width: 980px
+
 .person
   font-family: $main-sans-serif-font
   font-size: 14px
@@ -31,6 +35,10 @@ $about-padding: 15px
   @media (min-width: $sizeS)
     margin-bottom: 92px
 
+  @media (min-width: $sizeM)
+    margin-bottom: 0
+    display: flex
+
   &:last-child
     margin-bottom: 0
 
@@ -40,9 +48,33 @@ $about-padding: 15px
     @media (min-width: $sizeS)
       margin-bottom: 58px
 
+    @media (min-width: $sizeM)
+      flex-basis: $about-max-width
+      flex-shrink: 0
+      margin-bottom: 0
+
+      &_male
+        padding-bottom: 36px
+
+      &_female
+        padding-top: 36px
+        order: 3
+
+
   &__img
     width: 100%
     display: block
+
+  &__details
+    @media (min-width: $sizeM)
+      text-align: left
+      display: flex
+      flex-flow: column
+      justify-content: center
+
+      &_female
+        text-align: right
+        order: 1
 
   &__name
     font-family: $main-serif-font
@@ -55,7 +87,7 @@ $about-padding: 15px
       font-size: 32px
 
   &__title
-    line-height: 1.6
+    line-height: 1.0
     margin-bottom: 24px
 
     &::before
@@ -66,9 +98,66 @@ $about-padding: 15px
       content: '\2014'
       margin-left: 10px
 
+    &_male,
+    &_female
+      display: none
+
+    @media (min-width: $sizeM)
+      display: none
+      margin-bottom: 0
+      letter-spacing: 2px
+
+      &_male
+        display: block
+        margin-left: 30px
+        margin-right: 35px
+        padding-left: 15px
+        padding-bottom: 36px
+        border-left: 1px solid $nav-item-color
+
+      &_female
+        display: block
+        order: 2
+        margin-left: 35px
+        margin-right: 29px
+        padding-right: 15px
+        padding-top: 36px
+        border-right: 1px solid $nav-item-color
+
+      &::before
+        content: ''
+        margin-right: 0
+
+      &::after
+        content: ''
+        margin-left: 0
+
+  &__transformed
+
+    &_male
+      transform: rotate(-90.0deg) translateX(-17px)
+
+    &_female
+      transform: rotate(-90.0deg) translateX(-27px)
+
   &__about
     color: $dark-gray-color
     line-height: 1.4
 
     @media (min-width: $sizeS)
       font-size: 15px
+
+    @media (min-width: $sizeM)
+      margin-bottom: 40px
+
+  &__social
+    display: none
+
+    svg
+      fill: lighten($dark-gray-color, 20)
+
+    @media (min-width: $sizeM)
+      display: flex
+
+      &_female
+        justify-content: flex-end
