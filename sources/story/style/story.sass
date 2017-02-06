@@ -1,0 +1,45 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.story-header-container
+  background-image: url(img/story_bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  min-height: 200px
+  padding: 25px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  @media (min-width: $sizeS)
+    min-height: 400px
+
+  @media (min-width: $sizeM)
+    min-height: 450px
+
+.story-header
+  max-width: 424px
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__img
+    margin-bottom: 17px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 40px
+
+  &__title
+    @extend .title
+    color: $main-white-color
+    margin-bottom: 17px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 30px
+
+  &__description
+    @extend .description
+    color: $main-white-color
