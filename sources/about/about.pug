@@ -1,0 +1,30 @@
+-
+  var malePerson = {
+    photo: 'img/about_male.jpg',
+    name: 'Кирилл Василевский',
+    title: 'Жених',
+    about: 'Ну вот мы и подошли к новому рубежу нашей жизни. С трепетом ожидаю момента, когда одену кольцо на палец своей невесты. Немного волнительно все это. Cчастье переполняет, ведь это именно то, чего мы так давно ждали.'
+  };
+
+  var femalePerson = {
+    photo: 'img/about_female.jpg',
+    name: 'Татьяна Калинина',
+    title: 'Невеста',
+    about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Кирилла законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
+  };
+
+mixin person(personObj)
+  .person
+    .person__photo
+      img.person__img(src=personObj.photo)
+    .person__name
+      = personObj.name
+    .person__title
+      = personObj.title
+    .person__about
+      = personObj.about
+
+section.about-container
+  .about
+    +person(malePerson)
+    +person(femalePerson)
