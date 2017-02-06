@@ -45,15 +45,31 @@
     width: 45px
     height: 45px
 
+  @media (min-width: $sizeM)
+    width: 56px
+    height: 56px
+
   &__text
     font-size: 13px
     font-weight: 700
     font-family: $main-serif-font
 
+    @media (min-width: $sizeS)
+      font-size: 16px
+
+    @media (min-width: $sizeM)
+      font-size: 20px
+
   &__ampersand
     font-size: 9px
     font-family: $main-cursive-font
     line-height: 16px
+
+    @media (min-width: $sizeS)
+      font-size: 11px
+
+    @media (min-width: $sizeM)
+      font-size: 14px
 
 .menu
   width: 36px
