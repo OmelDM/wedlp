@@ -19,8 +19,8 @@ var BUILD_DIR = './build/'
 	, ASSETS_DIR = './assets/**/*'
 	, FONTS_DIR = './sources/fonts/*';
 
-gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'img', 'fonts', 'connect', 'watch']);
-gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'img', 'fonts']);
+gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'assets', 'fonts', 'connect', 'watch']);
+gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'assets', 'fonts']);
 
 gulp.task('deploy', ['release'], function () {
   return gulp.src("./build/**/*")
