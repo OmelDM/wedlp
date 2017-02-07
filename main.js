@@ -10,12 +10,18 @@ $(document).ready(function() {
 
 });
 
-function block (argument) {
-  // body...
-}
-function block (argument) {
-  // body...
-}
+$(document).ready(function() {
+  function makeTemplate(period) {
+    return '<li class="counter__item"><div class="counter__value"><span>{'+period+'n}</span></div><div class="counter__measurement">{'+period+'l}</div></li>'
+  }
+
+  $('.counter__time').countdown({
+    until: new Date(2017, 8, 16),
+    format: 'DHMS',
+    layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
+  });
+});
+
 $(document).ready(function() {
 
   $('.menu').click(function() {
@@ -40,5 +46,14 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+  var bgUrl = $('.thanks-container').data('background-url');
+  $('.thanks-container').css('background-image', 'url('+bgUrl+')');
+});
+
+$(document).ready(function() {
 
 });
+
+function block (argument) {
+  // body...
+}
