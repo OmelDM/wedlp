@@ -1,6 +1,11 @@
 @import '../../style/variables'
 @import '../../style/common'
 
+.story-container
+
+  @media (min-width: $sizeM)
+    background: $main-yellow-color
+
 .story-header-container
   background-image: url(img/story_bg.jpg)
   background-repeat: no-repeat
@@ -50,6 +55,11 @@
   max-width: 640px + 15px * 2
   min-width: 320px
 
+  @media (min-width: $sizeM)
+    padding: 0
+    max-width: 770px
+
+
 .story
   margin-bottom: 33px
   display: flex
@@ -62,8 +72,38 @@
   @media (min-width: $sizeS)
     margin-bottom: 95px
 
+  @media (min-width: $sizeM)
+    flex-direction: row
+    align-items: center
+    margin-bottom: 0
+
+  &__photo
+
+    @media (min-width: $sizeM)
+      align-self: stretch
+      flex-basis: 50%
+      flex-shrink: 0
+      padding-right: 65px
+      padding-bottom: 70px
+      border-right: 1px solid $nav-item-color
+
+      &:first-child
+        padding-top: 120px
+
+      &:last-child
+        padding-bottom: 120px
+
+      &_even
+        flex-basis: calc(50% + 1px)
+        order: 3
+        padding-right: 0
+        padding-left: 65px
+        border-left: 1px solid $nav-item-color
+        border-right: none
+
   &__img
     width: 100%
+    display: block
 
   &__date-container
     width: 64px
@@ -71,7 +111,17 @@
     background-color: $main-yellow-color
     border: 2px solid $main-red-color
     border-radius: 4px
-    transform: translateY(-37px) rotate(45deg)
+    transform: translateY(-32px) rotate(45deg)
+
+    @media (min-width: $sizeM)
+      flex-basis: 64px
+      flex-grow: 0
+      flex-shrink: 0
+      transform: translateX(-32px) rotate(45deg)
+
+      &_even
+        order: 2
+        transform: translateX(32px) rotate(45deg)
 
   &__date
     color: $main-red-color
@@ -91,6 +141,12 @@
   &__details
     max-width: 414px
 
+    @media (min-width: $sizeM)
+      flex-basis: calc(50% - 64px)
+
+      &_even
+        order: 1
+
   &__title
     @extend .title
     font-size: 28px
@@ -100,6 +156,12 @@
     @media (min-width: $sizeS)
       font-size: 30px
 
+    @media (min-width: $sizeM)
+      text-align: left
+
   &__description
     @extend .description
     font-size: 14px
+
+    @media (min-width: $sizeM)
+      text-align: left

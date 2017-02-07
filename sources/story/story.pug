@@ -46,18 +46,38 @@ section.story-container
         = headerDescription
 
   .story-list
+    - var index = 0;
     each story in stories
+      -
+        var isEven = index % 2 !== 0;
+        index++;
+
       .story
-        .story__photo
-          img.story__img(src=story.img)
-        .story__date-container
-          .story__date
-            .story__day
-              = story.day
-            .story__month
-              = story.month
-        .story__details
-          .story__title
-            = story.title
-          .story__description
-            = story.description
+        if isEven
+          .story__photo.story__photo_even
+            img.story__img(src=story.img)
+          .story__date-container.story__date-container_even
+            .story__date
+              .story__day
+                = story.day
+              .story__month
+                = story.month
+          .story__details.story__details_even
+            .story__title
+              = story.title
+            .story__description
+              = story.description
+        else
+          .story__photo
+            img.story__img(src=story.img)
+          .story__date-container
+            .story__date
+              .story__day
+                = story.day
+              .story__month
+                = story.month
+          .story__details
+            .story__title
+              = story.title
+            .story__description
+              = story.description
