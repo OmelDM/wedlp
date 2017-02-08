@@ -1,0 +1,98 @@
+-
+  var headerTitle = 'РОДСТВЕННИКИ';
+  var headerDescription = 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.';
+  var showAction = 'Показать больше';
+  var relatives = [
+    {
+      name: 'Михаил Василевский',
+      title: 'Отец жениха',
+      img: 'img/rel_01.jpg'
+    },
+    {
+      name: 'Тамила Василевский',
+      title: 'Мама жениха',
+      img: 'img/rel_02.jpg'
+    },
+    {
+      name: 'Владимир Даниленко',
+      title: 'Отец невесты',
+      img: 'img/rel_03.jpg'
+    },
+    {
+      name: 'Раиса Даниленко',
+      title: 'Мама невесты',
+      img: 'img/rel_04.jpg'
+    },
+    {
+      name: 'Валерий Василевский',
+      title: 'Дедушка жениха',
+      img: 'img/rel_05.jpg'
+    },
+    {
+      name: 'Вера Василевский',
+      title: 'Бабушка жениха',
+      img: 'img/rel_06.jpg'
+    },
+    {
+      name: 'Тарас Коновалець',
+      title: 'Дедушка невесты',
+      img: 'img/rel_07.jpg'
+    },
+    {
+      name: 'Маргарита Коновалець',
+      title: 'Бабушка невесты',
+      img: 'img/rel_08.jpg'
+    },
+    {
+      name: 'Лариса Василевская',
+      title: 'Сестра жениха',
+      img: 'img/rel_09.jpg'
+    },
+    {
+      name: 'Евгений Василевский',
+      title: 'Брат жениха',
+      img: 'img/rel_10.jpg'
+    },
+    {
+      name: 'Катерина Даниленко',
+      title: 'Сестра невесты',
+      img: 'img/rel_11.jpg'
+    },
+    {
+      name: 'Степан Даниленко',
+      title: 'Брат невесты',
+      img: 'img/rel_12.jpg'
+    }
+  ];
+
+section.relatives-container
+  .relatives
+    h1.relatives__title
+      = headerTitle
+    .relatives__description
+      = headerDescription
+
+    .relatives__list
+      - var index = 0;
+      each relative in relatives
+        - index++;
+        if 4 < index
+          .relative.relative_main
+            .relative__details
+              .relative__name
+                = relative.name
+              .relative__title
+                = relative.title
+            .relative__photo
+              img.relative__img(src=relative.img)
+        else
+          .relative
+            .relative__details
+              .relative__name
+                = relative.name
+              .relative__title
+                = relative.title
+            .relative__photo
+              img.relative__img(src=relative.img)
+    button.button.button_relatives(data-action="showMore")
+      = showAction

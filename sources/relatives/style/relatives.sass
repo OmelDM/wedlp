@@ -1,0 +1,104 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.relatives-container
+  background: $light-gray-color
+  padding: 66px 15px 84px
+
+  @media (min-width: $sizeS)
+    padding: 98px 0 112px
+
+  @media (min-width: $sizeM)
+    padding: 102px 0 141px
+
+.relatives
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__title
+    @extend .title
+    font-size: 28px
+    margin-bottom: 20px
+
+    @media (min-width: $sizeS)
+      font-size: 36px
+      margin-bottom: 27px
+
+  &__description
+    @extend .description
+    margin-bottom: 30px
+
+    @media (min-width: $sizeS)
+      font-size: 14px
+      margin-bottom: 42px
+
+    @media (min-width: $sizeM)
+      margin-bottom: 75px
+
+.relatives__list
+  max-width: 1160px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+
+.relative
+  width: 290px
+  height: 350px
+  margin-bottom: 20px
+  position: relative
+  overflow: hidden
+
+  &:last-child
+    margin-bottom: 0
+
+  &_main
+    display: none
+
+    @media (min-width: $sizeS)
+      display: block
+
+  // 2 * .relative width + .relatives-container padding-left + padding-right
+  @media (min-width: 610px)
+    margin-bottom: 0
+
+  &__img
+    width: 100%
+    display: block
+
+  &__details
+    background: rgba(0, 0, 0, .6)
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: none
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+
+  &__name
+    @extend .title
+    font-size: 35px
+    color: $main-yellow-color
+    margin-bottom: 20px
+
+  &__title
+    font-family: $main-sans-serif-font
+    font-size: 16px
+    color: $main-yellow-color
+    line-height: 1.0
+    margin-bottom: 37px
+
+.relative:hover .relative__details
+  display: flex
+
+.button_relatives
+  margin-top: 12px
+
+  @media (min-width: $sizeS)
+    display: none

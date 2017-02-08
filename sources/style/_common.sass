@@ -30,3 +30,22 @@ body
 
   @media (min-width: $sizeS)
     font-size: 14px
+
+.button
+  width: 175px
+  background: $main-red-color
+  border: none
+  border-bottom: 2px solid darken($main-red-color, 20)
+  font-family: $main-sans-serif-font
+  font-weight: 400
+  font-size: 14px
+  line-height: 40px
+  color: $main-yellow-color
+  cursor: pointer
+
+  &:hover
+    background: darken($main-red-color, 20)
+    border-color: darken($main-red-color,40)
+
+  &:active
+    border-bottom: none
