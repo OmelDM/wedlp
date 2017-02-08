@@ -10,6 +10,9 @@ $(document).ready(function() {
 
 });
 
+function block (argument) {
+  // body...
+}
 $(document).ready(function() {
   function makeTemplate(period) {
     return '<li class="counter__item"><div class="counter__value"><span>{'+period+'n}</span></div><div class="counter__measurement">{'+period+'l}</div></li>'
@@ -44,16 +47,19 @@ $(document).ready(function() {
 
 });
 
+$(document).ready(function() {
+  $('[data-action="showMore"]').click(function() {
+    $('.relative_main').removeClass('relative_main');
+    $(this).hide();
+  });
+});
+
+
+$(document).ready(function() {
+
+});
 
 $(document).ready(function() {
   var bgUrl = $('.thanks-container').data('background-url');
   $('.thanks-container').css('background-image', 'url('+bgUrl+')');
 });
-
-$(document).ready(function() {
-
-});
-
-function block (argument) {
-  // body...
-}
