@@ -1,0 +1,97 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.program-container
+  background: $nav-border-color
+  padding: 70px 12px 78px
+
+  @media (min-width: $sizeS)
+    padding: 102px 8% 110px
+
+  @media (min-width: $sizeM)
+    padding: 100px 0 145px
+    background-image: url(img/program_bg.png)
+    background-repeat: no-repeat
+    background-position: left bottom
+    background-size: 60%
+
+.program
+
+  &__title
+    @extend .title
+    font-size: 28px
+    margin-bottom: 20px
+
+    @media (min-width: $sizeS)
+      font-size: 36px
+      margin-bottom: 27px
+
+  &__description
+    @extend .description
+    margin-bottom: 30px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 60px
+
+
+.program__event-list
+
+  @media (min-width: $sizeM)
+    padding-left: 40%
+
+.event
+
+  &:last-child
+    margin-bottom: 0
+
+  @media (min-width: $sizeS)
+    padding-left: 100px
+    border-left: 2px dashed $main-red-color
+
+    &:last-child
+      border-left: none
+
+  &__header
+    margin-bottom: 20px
+    cursor: pointer
+    display: flex
+    align-items: flex-start
+
+    @media (min-width: $sizeS)
+      transform: translateX(-100px)
+
+  &__time
+    font-family: $main-sans-serif-font
+    font-size: 13px
+    font-weight: 400
+    color: $main-white-color
+    background-color: $main-red-color
+    text-align: center
+    line-height: 24px
+    margin-right: 16px
+    flex-basis: 60px
+    flex-shrink: 0
+
+    @media (min-width: $sizeS)
+      font-size: 18px
+      line-height: 33px
+      flex-basis: 82px
+      transform: translateX(-50%)
+
+  &__name
+    @extend .title
+    font-size: 24px
+    line-height: 24px
+    text-align: left
+
+    @media (min-width: $sizeS)
+      font-size: 28px
+      line-height: 33px
+
+  &__description
+    @extend .description
+    font-size: 14px
+    text-align: left
+    max-width: 450px
+    padding-bottom: 30px
+    display: none
