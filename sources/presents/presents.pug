@@ -1,0 +1,37 @@
+-
+  var headerTitle = 'Список подарков';
+  var headerDescription = 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.';
+  var presents = [
+    {
+      link: 'https://www.amazon.com',
+      img: 'img/present_01.png'
+    },
+    {
+      link: 'https://www.letu.ua',
+      img: 'img/present_02.png'
+    },
+    {
+      link: 'http://www.fellini.ua',
+      img: 'img/present_03.png'
+    },
+    {
+      link: 'https://shop.arber.ua/',
+      img: 'img/present_04.png'
+    }
+  ];
+
+section.presents-container
+  .presents
+    h1.presents__title
+      = headerTitle
+    .presents__description
+      = headerDescription
+    .presents__list
+      each present in presents
+        .present
+          .present__container
+            a.present__link(
+              target="_blank"
+              href=present.link
+            )
+              img.present__img(src=present.img)

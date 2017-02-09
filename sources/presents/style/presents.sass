@@ -1,0 +1,40 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.presents-container
+  padding: 70px 15px
+
+  @media (min-width: $sizeS)
+    padding: 100px 40px
+
+.presents
+  max-width: 1200px
+  margin: 0 auto
+
+  &__title
+    @extend .title
+    margin-bottom: 25px
+
+  &__description
+    @extend .description
+    margin-bottom: 30px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 60px
+
+  &__list
+    display: flex
+    flex-wrap: wrap
+
+.present
+  flex-basis: 50%
+
+  @media (min-width: $sizeS)
+    flex-basis: 33%
+
+  @media (min-width: $sizeM)
+    flex-basis: 25%
+
+  &__container
+    display: flex
+    justify-content: center
