@@ -1,0 +1,70 @@
+-
+  var headerTitle = 'Гости';
+  var headerDescription = 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.';
+  var showAction = 'Показать больше';
+  var guests = [
+    {
+      name: 'Ольга Толкачева',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_01.jpg'
+    },
+    {
+      name: 'Василий Кушнарев',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_02.jpg'
+    },
+
+    {
+      name: 'Александра Вишневская',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_03.jpg'
+    },
+    {
+      name: 'Олег Смирнов',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_04.jpg'
+    },
+
+    {
+      name: 'Олег Смирнов',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_05.jpg'
+    },
+    {
+      name: 'Олег Смирнов',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+      img: 'img/guest_06.jpg'
+    }
+  ];
+
+section.guests-container
+  .guests
+    h1.guests__title
+      = headerTitle
+    .guests__description
+      = headerDescription
+
+    .guests__list
+      - var index = 0;
+      each guest in guests
+        - index++;
+        if 3 < index
+          .guest.guest_hidden
+            .guest__photo
+              img.guest__img(src=guest.img)
+            .guest__details
+              .guest__name
+                = guest.name
+              .guest__description
+                = guest.description
+        else
+          .guest
+            .guest__photo
+              img.guest__img(src=guest.img)
+            .guest__details
+              .guest__name
+                = guest.name
+              .guest__description
+                = guest.description
+    button.button.button_guests(data-action="showMore")
+      = showAction

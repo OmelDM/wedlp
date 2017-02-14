@@ -1,0 +1,85 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.guests-container
+  background: $blue-gray-color
+  padding: 60px 15px
+
+  @media (min-width: $sizeS)
+    padding: 115px 0
+
+.guests
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__title
+    @extend .title
+    font-size: 28px
+    margin-bottom: 20px
+
+    @media (min-width: $sizeS)
+      font-size: 36px
+      margin-bottom: 25px
+
+  &__description
+    @extend .description
+    margin-bottom: 30px
+
+    @media (min-width: $sizeS)
+      font-size: 14px
+      margin-bottom: 55px
+
+    @media (min-width: $sizeM)
+      margin-bottom: 65px
+
+.guests__list
+  max-width: 1020px
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  align-items: flex-start
+
+.guest
+  width: 290px
+  margin-bottom: 20px
+  overflow: hidden
+
+  &_hidden
+    display: none
+
+    @media (min-width: $sizeS)
+      display: block
+
+  @media (min-width: 610px)
+    margin: 0 25px 50px
+
+  &__img
+    width: 100%
+    display: block
+
+  &__details
+    background-color: $main-white-color
+    padding: 34px 34px 50px
+
+  &__name
+    @extend .title
+    font-size: 24px
+    margin-bottom: 20px
+
+    @media (min-width: $sizeS)
+      font-size: 28px
+
+  &__description
+    font-family: $main-sans-serif-font
+
+    @media (min-width: $sizeS)
+      font-size: 14px
+
+.button_guests
+  margin-top: 12px
+
+  @media (min-width: $sizeS)
+    display: none
