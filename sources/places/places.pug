@@ -1,0 +1,92 @@
+-
+  var headerTitle = 'Когда и Где';
+  var places = [
+    {
+      title: 'Венчание',
+      date: 'Суббота 16 сентября 2017 года',
+      time: '11:00',
+      address: 'Михайловский собор ул. Трьохсвятительская, 8',
+      cord: {
+        lat: 50.455668,
+        lng: 30.522774
+      }
+    },
+    {
+      title: 'Регистрация',
+      date: 'Суббота 16 сентября 2017 года',
+      time: '13:00',
+      address: 'ЗАГС пр. Перемоги, 11',
+      cord: {
+        lat: 50.448369,
+        lng: 30.478206
+      }
+    },
+    {
+      title: 'Ресторан',
+      date: 'Суббота 16 сентября 2017 года',
+      time: '18:00',
+      address: 'Адмирал Клуб ул. Варшавская, 116, г. Ирпень',
+      cord: {
+        lat: 50.539368,
+        lng: 30.268018
+      }
+    }
+  ];
+
+mixin placeInner(place, index)
+  .place__details
+    .place__row
+      .place__icon
+        include ../svg/places_calendar.svg
+      .place__detail
+        = place.date
+    .place__row
+      .place__icon
+        include ../svg/places_clock.svg
+      .place__detail
+        = place.time
+    .place__row
+      .place__icon
+        include ../svg/places_place.svg
+      .place__detail
+        = place.address
+
+section.places-container(data-background-url='img/hero_bg.jpg')
+  .places
+    h1.places__title
+      = headerTitle
+    ul.places__nav
+      - var index = 0;
+      each place in places
+        li.places__nav-item
+          if index == 0
+            button.places__nav-title(
+              data-tab-target='tab_'+index
+              data-nav-current
+            )
+              = place.title
+          else
+            button.places__nav-title(data-tab-target='tab_'+index)
+              = place.title
+        - index++;
+    .places__info
+      .places__list
+        - var index = 0;
+        each place in places
+          if index == 0
+            .place.place_current(
+              data-tab='tab_'+index
+              data-place-lat=place.cord.lat
+              data-place-lng=place.cord.lng
+              data-tab-current
+            )
+              +placeInner(place, index)
+          else
+            .place(
+              data-tab='tab_'+index
+              data-place-lat=place.cord.lat
+              data-place-lng=place.cord.lng
+            )
+              +placeInner(place, index)
+          - index++;
+      .places__map#map
