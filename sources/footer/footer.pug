@@ -1,0 +1,36 @@
+-
+  var male = {
+    name: ' Кирилл Василевский',
+    phone: '(066) 568 55 78',
+    mail: 'kiril.v@gmail.com'
+  };
+  var female = {
+    name: 'Татьяна Калинина',
+    phone: '(066) 743 99 00',
+    mail: 't.kalinina@gmail.com'
+  };
+
+include ../logo/logo.pug
+include ../social/social.pug
+
+mixin info(person)
+  .info__name
+    = person.name
+  .info__contacts
+    a.info__link(href="tel:"+person.phone)
+      = person.phone
+    a.info__link(href="mailto:"+person.mail)
+      = person.mail
+
+footer.footer-container
+  .footer
+    .footer__logo
+      +logo('logo_bottom')
+    .info.info_male
+      +info(male)
+      .info__social.info__social_male
+        +social('social__item_bottom')
+    .info.info_female
+      +info(female)
+      .info__social.info__social_female
+        +social('social__item_bottom')

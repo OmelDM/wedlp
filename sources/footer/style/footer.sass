@@ -1,0 +1,75 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.footer-container
+  background-color: $main-red-color
+  padding: 28px 15px 39px
+
+  @media (min-width: $sizeS)
+    padding: 53px 0
+
+.footer
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  @media (min-width: $sizeS)
+    flex-direction: row
+    justify-content: center
+
+  &__logo
+    margin-bottom: 33px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 0
+      margin: 0 50px
+
+.info
+  text-align: center
+  color: $main-yellow-color
+  font-family: $main-sans-serif-font
+  font-size: 14px
+  line-height: 1
+
+  &_male
+    margin-bottom: 36px
+
+    @media (min-width: $sizeS)
+      order: -1
+      margin-bottom: 0
+      text-align: right
+
+  &_female
+    @media (min-width: $sizeS)
+      text-align: left
+
+  &__name
+    margin-bottom: 11px
+
+    @media (min-width: $sizeS)
+      font-size: 16px
+
+  &__contacts
+    font-weight: 300
+    margin-bottom: 20px
+
+  &__link
+    color: $main-yellow-color
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+    &:first-child
+      margin-right: 5px
+
+  &__social
+    display: flex
+    justify-content: center
+
+    @media (min-width: $sizeS)
+      &_male
+        justify-content: flex-end
+
+      &_female
+        justify-content: flex-start
