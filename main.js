@@ -25,6 +25,7 @@ $(document).ready(function() {
   });
 });
 
+
 $(document).ready(function() {
   $('[data-action="showMore"]').click(function() {
     $('.guest_hidden').removeClass('guest_hidden');
@@ -53,6 +54,7 @@ $(document).ready(function() {
   $('.hero-container').css('background-image', 'url('+bgUrl+')');
 
 });
+
 
 var map;
 
@@ -108,6 +110,15 @@ function addMarker(cord) {
 }
 
 $(document).ready(function() {
+});
+
+$(document).ready(function() {
+  $('[data-accardion-header]').click(function() {
+    $(this).next().slideToggle();
+  });
+});
+
+$(document).ready(function() {
   $('[data-action="showMore"]').click(function() {
     $('.relative_main').removeClass('relative_main');
     $(this).hide();
@@ -122,15 +133,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   var bgUrl = $('.thanks-container').data('background-url');
   $('.thanks-container').css('background-image', 'url('+bgUrl+')');
-});
-
-$(document).ready(function() {
-});
-
-$(document).ready(function() {
-  $('[data-accardion-header]').click(function() {
-    $(this).next().slideToggle();
-  });
 });
 
 $(document).ready(function() {
