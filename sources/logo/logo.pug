@@ -1,0 +1,12 @@
+-
+  var maleLetter = 'K';
+  var femaleLetter = 'T';
+
+mixin logo(logoModifier)
+  .logo(
+    class=logoModifier
+  )
+    .logo__text
+      = femaleLetter
+      span.logo__ampersand &
+      = maleLetter

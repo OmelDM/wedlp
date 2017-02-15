@@ -1,0 +1,47 @@
+@import '../../style/variables'
+
+.logo
+  color: $main-red-color
+  border: 1px solid $main-red-color
+  border-radius: 50%
+  background: $main-yellow-color
+  width: 36px
+  height: 36px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &_bottom
+    color: $main-yellow-color
+    border-color: $main-yellow-color
+    background-color: $main-red-color
+
+  @media (min-width: $sizeS)
+    width: 45px
+    height: 45px
+
+  @media (min-width: $sizeM)
+    width: 56px
+    height: 56px
+
+  &__text
+    font-size: 13px
+    font-weight: 700
+    font-family: $main-serif-font
+
+    @media (min-width: $sizeS)
+      font-size: 16px
+
+    @media (min-width: $sizeM)
+      font-size: 20px
+
+  &__ampersand
+    font-size: 9px
+    font-family: $main-cursive-font
+    line-height: 16px
+
+    @media (min-width: $sizeS)
+      font-size: 11px
+
+    @media (min-width: $sizeM)
+      font-size: 14px
