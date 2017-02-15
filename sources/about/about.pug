@@ -13,6 +13,8 @@
     about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Кирилла законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
   };
 
+include ../social/social.pug
+
 section.about-container
   .about
     .person.person_male
@@ -29,7 +31,7 @@ section.about-container
         .person__about
           = malePerson.about
         .person__social.person__social_male
-          include ../social/social.pug
+          +social
 
     .person.person_female
       .person__photo.person__photo_female
@@ -45,4 +47,4 @@ section.about-container
         .person__about
           = femalePerson.about
         .person__social.person__social_female
-          include ../social/social.pug
+          +social

@@ -1,6 +1,4 @@
 -
-  var maleLetter = 'K';
-  var femaleLetter = 'T';
   var navList = [
     {href: '#about', title: 'О НАС'},
     {href: '#history', title: 'НАША ИСТОРИЯ'},
@@ -13,12 +11,7 @@
     {href: '#contacts', title: 'КОНТАКТИ'}
   ];
 
-mixin logo
-  .logo
-    .logo__text
-      = femaleLetter
-      span.logo__ampersand &
-      = maleLetter
+include ../logo/logo.pug
 
 mixin navigationItem(item, index)
   - var indexCenter = Math.floor(navList.length / 2);

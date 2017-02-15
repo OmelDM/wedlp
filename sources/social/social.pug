@@ -3,19 +3,23 @@
   var fb = 'https://facebook.com';
   var vk = 'https://vk.com';
 
-.social
-  a.social__item(
-    href=insta
-    target=_blank
-  )
-    include ../svg/insta.svg
-  a.social__item(
-    href=fb
-    target=_blank
-  )
-    include ../svg/fb.svg
-  a.social__item(
-    href=vk
-    target=_blank
-  )
-    include ../svg/vk.svg
+mixin social(socialItemModifier)
+  .social
+    a.social__item(
+      href=insta
+      target=_blank
+      class=socialItemModifier
+    )
+      include ../svg/insta.svg
+    a.social__item(
+      href=fb
+      target=_blank
+      class=socialItemModifier
+    )
+      include ../svg/fb.svg
+    a.social__item(
+      href=vk
+      target=_blank
+      class=socialItemModifier
+    )
+      include ../svg/vk.svg
