@@ -19,6 +19,10 @@ html(lang="ru")
       href="plugins/pagnificpopup/magnific-popup.css"
       rel="stylesheet"
     )
+    link(
+      href="plugins/lightslider/css/lightslider.min.css"
+      rel="stylesheet"
+    )
   body
     include header/header.pug
     include hero/hero.pug
@@ -29,6 +33,7 @@ html(lang="ru")
     include places/places.pug
     include program/program.pug
     include guests/guests.pug
+    include wishes/wishes.pug
     include presents/presents.pug
     include galery/galery.pug
     include thanks/thanks.pug
@@ -40,6 +45,7 @@ html(lang="ru")
     //-script(src="plugins/countdown/jquery.countdown-uk.js")
     script(src="plugins/countdown/jquery.countdown-ru.js")
     script(src="plugins/pagnificpopup/jquery.magnific-popup.min.js")
+    script(src="plugins/lightslider/js/lightslider.min.js")
     script(src="main.js")
     script(
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvUfj9UoPHJazpZe4TVmRS7ZiwtFwIGJQ&callback=initMap"
