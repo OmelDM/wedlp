@@ -1,0 +1,68 @@
+-
+  var headerTitle = 'Галерея';
+  var allTitle = 'Все';
+  var galeries = [
+    {
+      title: 'Венчание',
+      photos: [
+        'img/galery_01.jpg'
+      ]
+    },
+    {
+      title: 'Регистрация',
+      photos: [
+        'img/galery_02.jpg',
+        'img/galery_06.jpg'
+      ]
+    },
+    {
+      title: 'Ресторан',
+      photos: [
+        'img/galery_03.jpg'
+      ]
+    },
+    {
+      title: 'Танцы',
+      photos: [
+        'img/galery_04.jpg'
+      ]
+    },
+    {
+      title: 'Видео',
+      photos: [
+        'img/galery_05.jpg'
+      ]
+    },
+  ];
+
+section.galery-container
+  .galery
+    h1.galery__title
+      = headerTitle
+    ul.galery__nav
+      li.galery__nav-item
+        button.galery__nav-title(
+          data-tag-target='tag_all'
+          data-tag-current
+        )
+          = allTitle
+      - var index = 0;
+      each galery in galeries
+        li.galery__nav-item
+          button.galery__nav-title(data-tag-target='tag_'+index)
+            = galery.title
+        - index++;
+    .galery__content
+      - var tagNum = 0;
+      each galery in galeries
+        - var tag = 'tag_'+tagNum
+        each photo in galery.photos
+          .galery__item(
+              data-tag=tag
+            )
+            a.galery__link(
+                href=photo
+                data-magnigic-popup
+              )
+              img.galery__img(src=photo)
+        - tagNum++;

@@ -1,0 +1,97 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.galery-container
+  background-color: $light-gray-color
+  padding: 63px 15px 14px
+
+  @media (min-width: $sizeS)
+    padding: 106px 62px 76px
+
+  @media (min-width: $sizeM)
+    padding: 84px 0 123px
+
+.galery
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__title
+    @extend .title
+    font-size: 28px
+    margin-bottom: 23px
+
+    @media (min-width: $sizeS)
+      font-size: 36px
+      margin-bottom: 36px
+
+  &__nav
+    list-style-type: none
+    margin-bottom: 48px
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+    @media (min-width: $sizeS)
+      margin-bottom: 53px
+
+    @media (min-width: $sizeM)
+      margin-bottom: 67px
+
+  &__nav-title
+    font-family: $main-sans-serif-font
+    font-size: 14px
+    color: $dark-gray-color
+    line-height: 25px
+    letter-spacing: 1px
+    padding: 0 7px
+    margin: 0 6px
+    background-color: transparent
+    border: none
+    cursor: pointer
+
+    &:hover
+      color: $main-white-color
+      background-color: $main-red-color
+
+    @media (min-width: $sizeS)
+      font-size: 15px
+      padding: 0 12px
+      margin: 0 15px
+
+  &__content
+    max-width: 1170px
+    margin: 0 -15px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    @media (min-width: $sizeS)
+      margin: 0
+
+    @media (min-width: 1170px)
+      min-width: 1170px
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+
+  &__item
+    margin-bottom: 10px
+
+    @media (min-width: $sizeS)
+      flex-basis: 33%
+      padding: 0 25px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 40px
+
+  &__link
+    cursor: zoom-in
+
+  &__img
+    width: 100%
+    display: block
+
+[data-tag-current]
+  color: $main-white-color
+  background-color: $main-red-color
