@@ -1,5 +1,6 @@
 -
   var headerTitle = 'Пожелания';
+  var addButtonTitle = 'Написать'
   var wishes = [
     {
       name: 'Ольга Толкачева',
@@ -33,3 +34,6 @@ section.wishes-container
                 = wish.description
               .wish__name
                 = wish.name
+    button.button(data-action="addWish")
+      = addButtonTitle
+    .wishes__form-container.mfp-hide(data-role="addWishForm")
