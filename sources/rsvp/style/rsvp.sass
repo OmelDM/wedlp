@@ -1,0 +1,48 @@
+@import '../../style/variables'
+@import '../../style/common'
+
+.rsvp-container
+  background: $light-gray-color
+  padding: 64px 40px 60px
+
+  @media (min-width: $sizeS)
+    padding: 90px 0
+
+.rsvp
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &__title
+    @extend .title
+    font-size: 32px
+    font-style: italic
+    font-weight: 600
+    text-transform: none
+    margin-bottom: 40px
+
+    @media (min-width: $sizeS)
+      font-size: 50px
+      margin-bottom: 66px
+
+  &__form
+    width: 100%
+    max-width: 560px
+
+    @media (min-width: $sizeS)
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+
+  &__item
+    margin-bottom: 25px
+
+    @media (min-width: $sizeS)
+      flex-basis: calc(50% - 15px)
+
+    &:last-child
+      margin-bottom: 0
+      text-align: center
+
+      @media (min-width: $sizeS)
+        flex-basis: 100%

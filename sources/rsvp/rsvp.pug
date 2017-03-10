@@ -1,0 +1,91 @@
+-
+  var headerTitle = 'Вы придете?';
+  var firstNameLabel = 'Ваше имя *';
+  var secondNameLabel = 'Ваша фамилия *';
+  var phoneLabel = 'Номер телефона *';
+  var eventsLabel = 'Присутствие *';
+  var events = [
+    {
+      value: 'all',
+      title: 'Все события'
+    },
+    {
+      value: 'wedding',
+      title: 'Венчание'
+    },
+    {
+      value: 'registry',
+      title: 'Регистрация'
+    },
+    {
+      value: 'restorant',
+      title: 'Ресторан'
+    }
+  ];
+  var rsvpButton = 'Подтверждаю';
+
+section.rsvp-container
+  .rsvp
+    h1.rsvp__title
+      = headerTitle
+    form.rsvp__form(
+      autocomplete
+    )
+      .rsvp__item
+        label.form__label(
+          for="first-name"
+        )
+          = firstNameLabel
+        br
+        input.form__input(
+          name="first-name"
+          id="first-name"
+          required
+        )
+      .rsvp__item
+        label.form__label(
+          for="second-name"
+        )
+          = secondNameLabel
+        br
+        input.form__input(
+          name="second-name"
+          id="second-name"
+          required
+        )
+      .rsvp__item
+        label.form__label(
+          for="phone"
+        )
+          = phoneLabel
+        br
+        input.form__input(
+          name="phone"
+          id="phone"
+          required
+        )
+      .rsvp__item
+        label.form__label(
+          for="events"
+        )
+          = eventsLabel
+        br
+        .form__checkbox-group
+          each event in events
+            .form__checkbox
+              input.form__input.form__input_checkbox(
+                type="checkbox"
+                value=event.value
+                id=event.value
+                checked
+              )
+              label.form__label_checkbox(
+                for=event.value
+              )
+                = event.title
+      .rsvp__item
+        input.button(
+          name="submit"
+          type="submit"
+          value=rsvpButton
+        )
