@@ -1,6 +1,10 @@
 -
   var headerTitle = 'Пожелания';
-  var addButtonTitle = 'Написать'
+  var addButtonTitle = 'Написать';
+  var sendButtonTitle = 'Отправить';
+  var addWishFormTitle = 'Ваше пожелание';
+  var nameLabel = 'Ваше имя и фамилия *';
+  var wishTextLabel = 'Текст пожелания *';
   var wishes = [
     {
       name: 'Ольга Толкачева',
@@ -37,3 +41,45 @@ section.wishes-container
     button.button(data-action="addWish")
       = addButtonTitle
     .wishes__form-container.mfp-hide(data-role="addWishForm")
+      .wishes__form
+        button.button.button_close.wishes__button-close(data-action="closeAddWishForm")
+          | x
+        h3.wishes__form-title
+          = addWishFormTitle
+        form(
+          autocomplete
+        )
+          .wishes__form-item
+            label.form__label(
+              for="name"
+            )
+              = nameLabel
+            br
+            input.form__input(
+              name="name"
+              id="name"
+              required
+            )
+          .wishes__form-item
+            label.form__label(
+              for="wish_text"
+            )
+              = wishTextLabel
+            br
+            textarea.form__textarea(
+              name="wish_text"
+              id="wish_text"
+              rows="5"
+              required
+            )
+          .wishes__form-item
+            input(
+              name="photo"
+              type="file"
+            )
+          .wishes__form-item.wishes__form-item_center
+            input.button(
+              name="submit"
+              type="submit"
+              value=sendButtonTitle
+            )

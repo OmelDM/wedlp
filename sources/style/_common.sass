@@ -2,7 +2,9 @@
 @import reset
 
 div,
-li
+li,
+input,
+textarea
   box-sizing: border-box
 
 body
@@ -50,3 +52,36 @@ body
 
   &:active
     border-color: darken($main-red-color, 20)
+
+  &_close
+    border: none
+    width: initial
+    line-height: 1.0
+    font-size: 20px
+    padding: 5px 8px
+
+.form-item-border
+  border: 2px solid lighten($dark-blue-color, 20)
+
+.form
+
+  &__input
+    @extend .form-item-border
+    color: $dark-blue-color
+    line-height: 1.0
+    font-size: 25px
+    padding: 6px
+    width: 100%
+
+  &__textarea
+    @extend .form-item-border
+    color: $dark-blue-color
+    font-size: 16px
+    padding: 5px 8px
+    width: 100%
+    resize: vertical
+
+  &__label
+    color: $dark-blue-color
+    font-family: $main-sans-serif-font
+    font-size: 16px

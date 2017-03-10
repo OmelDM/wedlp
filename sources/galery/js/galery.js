@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $('[data-magnigic-popup]').magnificPopup({
     type: 'image',
+    closeOnContentClick: true
   });
 
   $('[data-tag-target]').click(function() {

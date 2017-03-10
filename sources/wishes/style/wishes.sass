@@ -33,6 +33,41 @@
     @media (min-width: $sizeS)
       margin-bottom: 40px
 
+  &__form-container
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__form
+    width: 95%
+    max-width: 600px
+    margin: 0 auto
+    border: 10px solid $main-red-color
+    background-color: $main-white-color
+    display: flex
+    flex-direction: column
+
+  &__button-close
+    align-self: flex-end
+
+  &__form-title
+    color: $nav-item-color
+    font-family: $main-serif-font
+    font-size: 30px
+    font-weight: 700
+    font-style: italic
+    text-align: center
+
+  &__form-item
+    padding: 0 15px
+    margin-bottom: 20px
+
+    @media (min-width: $sizeS)
+      margin-bottom: 35px
+
+    &_center
+      text-align: center
+
 .wish-container
   padding: 0 15px
 

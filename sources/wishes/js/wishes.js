@@ -13,11 +13,16 @@ $(document).ready(function() {
   });
 
   $('[data-action="addWish"]').magnificPopup({
+    showCloseBtn: false,
+    midClick: true,
     items: {
       type:'inline',
-      midClick: true,
       src: $('[data-role="addWishForm"]')
     }
+  });
+
+  $('[data-action="closeAddWishForm"]').click(function() {
+    $('[data-action="addWish"]').magnificPopup('close');
   });
 
 });
