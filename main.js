@@ -30,6 +30,7 @@ $(document).ready(function() {
 
   $('[data-magnigic-popup]').magnificPopup({
     type: 'image',
+    closeOnContentClick: true
   });
 
   $('[data-tag-target]').click(function() {
@@ -145,6 +146,10 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('#events').selectric();
+});
+
 
 $(document).ready(function() {
 
@@ -161,15 +166,25 @@ $(document).ready(function() {
     item: 1,
     addClass: 'wishes__list',
     adaptiveHeight:true,
-    controls: false,
-    responsive : [
-      {
-        breakpoint: 768,
-        settings: {
-          controls: false
-        }
-      }
-    ]
+    auto: true,
+    pause: 5000,
+    pauseOnHover: true,
+    loop: true,
+    nextHtml: '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
+    prevHtml: '<svg class="arrow arrow_prev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
+  });
+
+  $('[data-action="addWish"]').magnificPopup({
+    showCloseBtn: false,
+    midClick: true,
+    items: {
+      type:'inline',
+      src: $('[data-role="addWishForm"]')
+    }
+  });
+
+  $('[data-action="closeAddWishForm"]').click(function() {
+    $('[data-action="addWish"]').magnificPopup('close');
   });
 
 });
