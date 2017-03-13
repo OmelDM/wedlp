@@ -93,16 +93,11 @@ body
     font-family: $main-sans-serif-font
     font-size: 16px
 
-    &_checkbox
-      color: $nav-item-color
-      font-size: 16px
-      padding: 0
+  &__select
+    @extend .form-item-border
+    width: 100%
 
-  &__checkbox-group
-    padding: 15px 0 0
-    display: flex
-    flex-wrap: wrap
-
-  &__checkbox
-    flex-basis: 50%
-    margin-bottom: 10px
+  &__option
+    color: $dark-blue-color
+    font-size: 16px
+    padding: 5px 8px

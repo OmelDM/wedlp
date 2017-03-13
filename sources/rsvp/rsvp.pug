@@ -70,19 +70,18 @@ section.rsvp-container
         )
           = eventsLabel
         br
-        .form__checkbox-group
+        select.form__select(
+          name="events"
+          id="events"
+          multiple
+          required
+          data-select-event
+        )
           each event in events
-            .form__checkbox
-              input.form__input.form__input_checkbox(
-                type="checkbox"
-                value=event.value
-                id=event.value
-                checked
-              )
-              label.form__label_checkbox(
-                for=event.value
-              )
-                = event.title
+            option.form__option(
+              value=event.value
+            )
+              = event.title
       .rsvp__item
         input.button(
           name="submit"
