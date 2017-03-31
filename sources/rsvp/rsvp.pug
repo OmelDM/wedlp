@@ -1,9 +1,15 @@
 -
   var headerTitle = 'Вы придете?';
+  var thanksTitle = 'Благодарим';
+  var thanksMessage = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   var firstNameLabel = 'Ваше имя *';
+  var firstNameRequired = 'Поле "Ваше имя" пустое';
   var secondNameLabel = 'Ваша фамилия *';
+  var secondNameRequired = 'Поле "Ваша фамилия" пустое';
   var phoneLabel = 'Номер телефона *';
+  var phoneRequired = 'Поле "Номер телефона" пустое';
   var eventsLabel = 'Присутствие *';
+  var eventsRequired = 'Поле "Присутствие" пустое';
   var events = [
     {
       value: 'all',
@@ -23,68 +29,98 @@
     }
   ];
   var rsvpButton = 'Подтверждаю';
+  var rsvpButtonSendingLabel = 'Отпраление...';
+  var rsvpAction = 'http://babystreet.kiev.ua/wlp/rsvp.php';
 
 section.rsvp-container
-  .rsvp
+  .rsvp(
+    data-rsvp-main
+  )
     h1.rsvp__title
       = headerTitle
-    form.rsvp__form(
+    form.rsvp__form#rsvpform(
       autocomplete
+      action = rsvpAction
+      method = "post"
     )
       .rsvp__item
         label.form__label(
-          for="first-name"
+          for = "first-name"
         )
           = firstNameLabel
         br
-        input.form__input(
-          name="first-name"
-          id="first-name"
-          required
+        input.form__input.ajax-input(
+          type = "text"
+          name = "first-name"
+          id = "first-name"
+          data-required = firstNameRequired
+          data-output-label = firstNameLabel
         )
       .rsvp__item
         label.form__label(
-          for="second-name"
+          for = "second-name"
         )
           = secondNameLabel
         br
-        input.form__input(
-          name="second-name"
-          id="second-name"
-          required
+        input.form__input.ajax-input(
+          type = "text"
+          name = "second-name"
+          id = "second-name"
+          data-required = secondNameRequired
+          data-output-label = secondNameLabel
         )
       .rsvp__item
         label.form__label(
-          for="phone"
+          for = "phone"
         )
           = phoneLabel
         br
-        input.form__input(
-          name="phone"
-          id="phone"
-          required
+        input.form__input.ajax-input(
+          type = "text"
+          name = "phone"
+          id = "phone"
+          data-required = phoneRequired
+          data-output-label = phoneLabel
         )
       .rsvp__item
         label.form__label(
-          for="events"
+          for = "events"
         )
           = eventsLabel
         br
-        select.form__select(
-          name="events"
-          id="events"
+        select.form__select.ajax-input(
+          name = "events"
+          id = "events"
           multiple
-          required
           data-select-event
+          data-required = eventsRequired
+          data-output-label = eventsLabel
         )
+          - var index = 0;
           each event in events
-            option.form__option(
-              value=event.value
-            )
-              = event.title
+            if index === 0
+              option.form__option(
+                selected
+                value = event.title
+              )
+                = event.title
+            else
+              option.form__option(
+                value = event.title
+              )
+                = event.title
+            - index++;
       .rsvp__item
-        input.button(
-          name="submit"
-          type="submit"
-          value=rsvpButton
+        input.button#submitButton(
+          name = "submit"
+          type = "submit"
+          value = rsvpButton
+          data-sending-label = rsvpButtonSendingLabel
         )
+  .rsvp.rsvp_thanks.hidden(
+    data-rsvp-thanks
+  )
+    h1.rsvp__title
+      = thanksTitle
+    .description.description_small
+      = thanksMessage

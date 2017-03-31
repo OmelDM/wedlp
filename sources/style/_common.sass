@@ -11,6 +11,9 @@ body
   background: $main-bg-color
   min-width: 320px
 
+.hidden
+  display: none
+
 .title
   color: $nav-item-color
   font-family: $main-serif-font
@@ -33,6 +36,9 @@ body
 
   @media (min-width: $sizeS)
     font-size: 14px
+
+  &_small
+    max-width: 500px
 
 .button
   width: 175px
@@ -65,6 +71,9 @@ body
 
   @media (min-width: $sizeS)
     border-width: 2px
+
+.has-error
+  border-color: $main-red-color
 
 .form
 

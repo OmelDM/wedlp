@@ -1,19 +1,13 @@
 $(document).ready(function() {
 
-  selectAll()
-
-  $('[data-select-event]').change(function(event) {
-    if (event.target.value === 'all') {
-      selectAll();
-    } else {
-    //  $('[data-select-event] option[name="all"]').removeAttr('selected');
+  $('#rsvpform').ajaxrsvp({
+    successCalback: function() {
+      $('[data-rsvp-main]').addClass('hidden');
+      $('[data-rsvp-thanks]').removeClass('hidden');
+    	$('html, body').animate({
+        scrollTop: $('[data-rsvp-thanks]').offset().top - 200
+      }, 1000);
     }
   });
-
-  function selectAll() {
-    $('[data-select-event] option').each(function(index, element) {
-      $(element).prop('selected', 'true');
-    });
-  }
 
 });
