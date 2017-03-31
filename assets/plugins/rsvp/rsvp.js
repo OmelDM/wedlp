@@ -152,7 +152,9 @@
 							if(response.type == 'error')
 							{
 								output = '<div class="bg-danger">'+response.text+'</div>';
-								settings.failCallback();
+								if (settings.failCallback) {
+									settings.failCallback();
+								}
 							}
 							//ELSE IF NO ERROR
 							else
@@ -185,8 +187,9 @@
 			    		// 		}, 1000);
 							// }
 
-							settings.successCallback();
-
+							if (settings.successCallback) {
+								settings.successCallback();
+							}
             }, 'json');
 		});
 

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $('#rsvpform').ajaxrsvp({
-    successCalback: function() {
+    successCallback: function() {
       $('[data-rsvp-main]').addClass('hidden');
       $('[data-rsvp-thanks]').removeClass('hidden');
     	$('html, body').animate({
