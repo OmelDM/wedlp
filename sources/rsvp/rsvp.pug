@@ -6,7 +6,7 @@
   var nameRequired = 'Поле "Ваше имя и фамилия" пустое';
   var eventsLabel = 'Присутствие *';
   var eventsRequired = 'Поле "Присутствие" пустое';
-  var wishLabel = 'Текст пожелания *';
+  var wishLabel = 'Текст пожелания';
   var photoLabel = 'Ваше фото *';
   var events = [
     {
@@ -28,7 +28,6 @@
   ];
   var rsvpButton = 'Подтверждаю';
   var rsvpButtonSendingLabel = 'Отпраление...';
-  var rsvpAction = 'http://babystreet.kiev.ua/wlp/rsvp.php';
 
 section.rsvp-container
   .rsvp(
@@ -38,8 +37,8 @@ section.rsvp-container
       = headerTitle
     form.rsvp__form#rsvpform(
       autocomplete
-      action = rsvpAction
       method = "post"
+      enctype = "multipart/form-data"
     )
       .rsvp__item
         label.form__label(
@@ -61,7 +60,7 @@ section.rsvp-container
           = eventsLabel
         br
         select.form__select.ajax-input(
-          name = "events"
+          name = "events[]"
           id = "events"
           multiple
           data-select-event
@@ -88,10 +87,11 @@ section.rsvp-container
         )
           = wishLabel
         br
-        textarea.form__textarea(
+        textarea.form__textarea.ajax-input(
           name="wish"
           id="wish"
           rows="5"
+          data-output-label = wishLabel
         )
       .rsvp__item
         label.form__label(
@@ -99,10 +99,11 @@ section.rsvp-container
         )
           = photoLabel
         br
-        input(
+        input.ajax-input(
           name = "photo"
           id = "photo"
           type = "file"
+          data-output-label = photoLabel
         )
       .rsvp__item
         input.button#submitButton(
