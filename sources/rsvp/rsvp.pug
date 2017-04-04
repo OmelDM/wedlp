@@ -2,14 +2,12 @@
   var headerTitle = 'Вы придете?';
   var thanksTitle = 'Благодарим';
   var thanksMessage = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  var firstNameLabel = 'Ваше имя *';
-  var firstNameRequired = 'Поле "Ваше имя" пустое';
-  var secondNameLabel = 'Ваша фамилия *';
-  var secondNameRequired = 'Поле "Ваша фамилия" пустое';
-  var phoneLabel = 'Номер телефона *';
-  var phoneRequired = 'Поле "Номер телефона" пустое';
+  var nameLabel = 'Ваше имя и фамилия *';
+  var nameRequired = 'Поле "Ваше имя и фамилия" пустое';
   var eventsLabel = 'Присутствие *';
   var eventsRequired = 'Поле "Присутствие" пустое';
+  var wishLabel = 'Текст пожелания *';
+  var photoLabel = 'Ваше фото *';
   var events = [
     {
       value: 'all',
@@ -45,42 +43,16 @@ section.rsvp-container
     )
       .rsvp__item
         label.form__label(
-          for = "first-name"
+          for = "name"
         )
-          = firstNameLabel
+          = nameLabel
         br
         input.form__input.ajax-input(
           type = "text"
-          name = "first-name"
-          id = "first-name"
-          data-required = firstNameRequired
-          data-output-label = firstNameLabel
-        )
-      .rsvp__item
-        label.form__label(
-          for = "second-name"
-        )
-          = secondNameLabel
-        br
-        input.form__input.ajax-input(
-          type = "text"
-          name = "second-name"
-          id = "second-name"
-          data-required = secondNameRequired
-          data-output-label = secondNameLabel
-        )
-      .rsvp__item
-        label.form__label(
-          for = "phone"
-        )
-          = phoneLabel
-        br
-        input.form__input.ajax-input(
-          type = "text"
-          name = "phone"
-          id = "phone"
-          data-required = phoneRequired
-          data-output-label = phoneLabel
+          name = "name"
+          id = "name"
+          data-required = nameRequired
+          data-output-label = nameLabel
         )
       .rsvp__item
         label.form__label(
@@ -110,6 +82,28 @@ section.rsvp-container
               )
                 = event.title
             - index++;
+      .rsvp__item
+        label.form__label(
+            for = "wish"
+        )
+          = wishLabel
+        br
+        textarea.form__textarea(
+          name="wish"
+          id="wish"
+          rows="5"
+        )
+      .rsvp__item
+        label.form__label(
+            for = "photo"
+        )
+          = photoLabel
+        br
+        input(
+          name = "photo"
+          id = "photo"
+          type = "file"
+        )
       .rsvp__item
         input.button#submitButton(
           name = "submit"
