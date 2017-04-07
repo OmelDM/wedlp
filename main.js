@@ -30,7 +30,10 @@ $(document).ready(function() {
 
   $('[data-magnigic-popup]').magnificPopup({
     type: 'image',
-    closeOnContentClick: true
+    closeOnContentClick: true,
+    gallery: {
+      enabled: true
+    }
   });
 
   $('[data-tag-target]').click(function() {
@@ -147,7 +150,58 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-  $('#events').selectric();
+
+  $('#rsvpform').submit(function(event) {
+    event.preventDefault();
+
+    if (isFormValid()) {
+      sendForm(this);
+    } else {
+      showErrors();
+    }
+
+  });
+
+  function isFormValid() {
+    return true;
+  }
+
+  function sendForm(form) {
+    var formData = null;
+
+    if (window.FormData) {
+      formData = new FormData(form);
+    }
+
+    if (formData) {
+      $.ajax({
+        url: "rsvp.php",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: 'json',
+        success: successCallback,
+        error: errorCallback
+      });
+    }
+  }
+
+  function showErrors() {
+
+  }
+
+  function successCallback(resonse) {
+    $('[data-rsvp-main]').addClass('hidden');
+    $('[data-rsvp-thanks]').removeClass('hidden');
+    $('html, body').animate({
+      scrollTop: $('[data-rsvp-thanks]').offset().top - 200
+    }, 1000);
+  }
+
+  function errorCallback(jqXHR) {
+    alert('Error ' + jqXHR.responseJSON.text);
+  }
 });
 
 
@@ -172,19 +226,6 @@ $(document).ready(function() {
     loop: true,
     nextHtml: '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
     prevHtml: '<svg class="arrow arrow_prev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
-  });
-
-  $('[data-action="addWish"]').magnificPopup({
-    showCloseBtn: false,
-    midClick: true,
-    items: {
-      type:'inline',
-      src: $('[data-role="addWishForm"]')
-    }
-  });
-
-  $('[data-action="closeAddWishForm"]').click(function() {
-    $('[data-action="addWish"]').magnificPopup('close');
   });
 
 });
