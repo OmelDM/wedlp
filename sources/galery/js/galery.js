@@ -2,7 +2,10 @@ $(document).ready(function() {
 
   $('[data-magnigic-popup]').magnificPopup({
     type: 'image',
-    closeOnContentClick: true
+    closeOnContentClick: true,
+    gallery: {
+      enabled: true
+    }
   });
 
   $('[data-tag-target]').click(function() {
