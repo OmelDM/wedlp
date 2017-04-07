@@ -56,9 +56,16 @@
   @media (min-width: 610px)
     margin: 0 25px 50px
 
+  &__photo
+    overflow: hidden
+
   &__img
     width: 100%
     display: block
+    transition: transform .75s
+
+    &:hover
+      transform: scale(1.1) rotate(6deg)
 
   &__details
     background-color: $main-white-color
