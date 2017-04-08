@@ -33,12 +33,15 @@ section.rsvp-container
   .rsvp(
     data-rsvp-main
   )
-    h1.rsvp__title
+    h1.rsvp__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
     form.rsvp__form#rsvpform(
       autocomplete
       method = "post"
       enctype = "multipart/form-data"
+      data-animation = "zoomIn"
     )
       .rsvp__item
         label.form__label(

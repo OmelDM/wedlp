@@ -5,12 +5,16 @@
 
 section.hero-container(data-background-url='img/hero_bg.jpg')
   .hero
-    .hero__title
+    .hero__title(
+      data-animation = "fadeInUp"
+    )
       .hero__name
         = femaleName
       .hero__heart
         include ../svg/heart.svg
       .hero__name
         = maleName
-    .hero__description
+    .hero__description(
+      data-animation = "fadeInUp"
+    )
       = description

@@ -6,11 +6,17 @@
 
 section.thanks-container(data-background-url='img/thanks_bg.jpg')
   .thanks
-    .thanks__title
+    .thanks__title(
+      data-animation = "fadeInUp"
+    )
       = title
-    .thanks__description
+    .thanks__description(
+      data-animation = "fadeInUp"
+    )
       = description
-    .thanks__details
+    .thanks__details(
+      data-animation = "zoomIn"
+    )
       .thanks__name
         = femaleName
       .thanks__heart

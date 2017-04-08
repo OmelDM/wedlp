@@ -8,11 +8,17 @@
 
 section.counter-container
   .counter
-    h1.counter__title
+    h1.counter__title(
+      data-animation = "fadeInUp"
+    )
       = title
-    .counter__description
+    .counter__description(
+      data-animation = "fadeInUp"
+    )
       = dateString
-    ul.counter__time
+    ul.counter__time(
+      data-animation = "fadeInUp"
+    )
       //- li.counter__item
       //-   .counter__value
       //-     span 111

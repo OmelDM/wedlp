@@ -67,9 +67,13 @@
 
 section.relatives-container
   .relatives
-    h1.relatives__title
+    h1.relatives__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    .relatives__description
+    .relatives__description(
+      data-animation = "fadeInUp"
+    )
       = headerDescription
 
     .relatives__list
@@ -77,7 +81,9 @@ section.relatives-container
       each relative in relatives
         - index++;
         if 4 < index
-          .relative.relative_main
+          .relative.relative_main(
+            data-animation = "zoomIn"
+          )
             .relative__details
               .relative__name
                 = relative.name
@@ -86,7 +92,9 @@ section.relatives-container
             .relative__photo
               img.relative__img(src=relative.img)
         else
-          .relative
+          .relative(
+            data-animation = "zoomIn"
+          )
             .relative__details
               .relative__name
                 = relative.name

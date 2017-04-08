@@ -21,7 +21,9 @@
 
 section.wishes-container
   .wishes
-    h1.wishes__title
+    h1.wishes__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
     ul(data-wishes-slider)
       each wish in wishes

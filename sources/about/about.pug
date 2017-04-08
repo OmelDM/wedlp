@@ -18,12 +18,16 @@ include ../social/social.pug
 section.about-container
   .about
     .person.person_male
-      .person__photo.person__photo_male
+      .person__photo.person__photo_male(
+        data-animation = "fadeInLeft"
+      )
         img.person__img(src=malePerson.photo)
       .person__title.person__title_male
         .person__transformed.person__transformed_male
           = malePerson.title
-      .person__details.person__details_male
+      .person__details.person__details_male(
+        data-animation = "fadeInRight"
+      )
         .person__name
           = malePerson.name
         .person__title
@@ -34,12 +38,16 @@ section.about-container
           +social
 
     .person.person_female
-      .person__photo.person__photo_female
+      .person__photo.person__photo_female(
+        data-animation = "fadeInRight"
+      )
         img.person__img(src=femalePerson.photo)
       .person__title.person__title_female
         .person__transformed.person__transformed_female
           = femalePerson.title
-      .person__details.person__details_female
+      .person__details.person__details_female(
+        data-animation = "fadeInLeft"
+      )
         .person__name
           = femalePerson.name
         .person__title

@@ -39,9 +39,13 @@
 
 section.guests-container
   .guests
-    h1.guests__title
+    h1.guests__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    .guests__description
+    .guests__description(
+      data-animation = "fadeInUp"
+    )
       = headerDescription
 
     .guests__list
@@ -49,7 +53,9 @@ section.guests-container
       each guest in guests
         - index++;
         if 3 < index
-          .guest.guest_hidden
+          .guest.guest_hidden(
+            data-animation = "zoomIn"
+          )
             .guest__photo
               img.guest__img(src=guest.img)
             .guest__details
@@ -58,7 +64,9 @@ section.guests-container
               .guest__description
                 = guest.description
         else
-          .guest
+          .guest(
+            data-animation = "zoomIn"
+          )
             .guest__photo
               img.guest__img(src=guest.img)
             .guest__details

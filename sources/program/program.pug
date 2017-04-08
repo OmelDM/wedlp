@@ -31,12 +31,18 @@
 
 section.program-container
   .program
-    h1.program__title
+    h1.program__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    .program__description
+    .program__description(
+      data-animation = "fadeInUp"
+    )
       = headerDescription
 
-    .program__event-list
+    .program__event-list(
+      data-animation = "zoomIn"
+    )
       each event in events
         .event
           .event__header(data-accardion-header)

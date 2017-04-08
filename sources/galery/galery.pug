@@ -37,9 +37,13 @@
 
 section.galery-container
   .galery
-    h1.galery__title
+    h1.galery__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    ul.galery__nav
+    ul.galery__nav(
+      data-animation = "fadeInUp"
+    )
       li.galery__nav-item
         button.galery__nav-title(
           data-tag-target='tag_all'
@@ -59,6 +63,7 @@ section.galery-container
         each photo in galery.photos
           .galery__item(
               data-tag=tag
+              data-animation = "fadeIn"
             )
             a.galery__link(
                 href=photo

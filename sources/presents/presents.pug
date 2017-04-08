@@ -22,13 +22,19 @@
 
 section.presents-container
   .presents
-    h1.presents__title
+    h1.presents__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    .presents__description
+    .presents__description(
+      data-animation = "fadeInUp"
+    )
       = headerDescription
     .presents__list
       each present in presents
-        .present
+        .present(
+          data-animation = "zoomIn"
+        )
           .present__container
             a.present__link(
               target="_blank"

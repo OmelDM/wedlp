@@ -24,13 +24,19 @@ mixin info(person)
 
 footer.footer-container
   .footer
-    .footer__logo
+    .footer__logo(
+      data-animation = "fadeInUp"
+    )
       +logo('logo_bottom')
-    .info.info_male
+    .info.info_male(
+      data-animation = "fadeInLeft"
+    )
       +info(male)
       .info__social.info__social_male
         +social('social__item_bottom')
-    .info.info_female
+    .info.info_female(
+      data-animation = "fadeInRight"
+    )
       +info(female)
       .info__social.info__social_female
         +social('social__item_bottom')

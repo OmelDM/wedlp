@@ -53,9 +53,13 @@ mixin placeInner(place, index)
 
 section.places-container(data-background-url='img/hero_bg.jpg')
   .places
-    h1.places__title
+    h1.places__title(
+      data-animation = "fadeInUp"
+    )
       = headerTitle
-    ul.places__nav
+    ul.places__nav(
+      data-animation = "fadeInUp"
+    )
       - var index = 0;
       each place in places
         li.places__nav-item
@@ -69,7 +73,9 @@ section.places-container(data-background-url='img/hero_bg.jpg')
             button.places__nav-title(data-tab-target='tab_'+index)
               = place.title
         - index++;
-    .places__info
+    .places__info(
+      data-animation = "fadeIn"
+    )
       .places__list
         - var index = 0;
         each place in places
