@@ -1,13 +1,16 @@
-function main () {
-  // get filter=filterName
-
-}
-
 $(document).ready(function() {
 
-  var bgUrl = $('.hero-container').data('background-url');
-  $('.hero-container').css('background-image', 'url('+bgUrl+')');
+  $('[data-animation]').css('visibility', 'hidden');
 
+  $('[data-animation]').one('inview', function() {
+    var animationType = 'animated ' + $(this).data('animation');
+    $(this).addClass(animationType);
+    $(this).css('visibility', 'visible');
+  })
+
+});
+
+$(document).ready(function() {
 });
 
 function block (argument) {
