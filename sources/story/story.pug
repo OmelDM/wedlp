@@ -56,11 +56,13 @@ section.story-container
 
       .story
         if isEven
-          .story__photo.story__photo_even
-            img.story__img(
-              src=story.img
+          .story__photo-container.story__photo-container_even
+            .story__photo(
               data-animation = "fadeInRight"
             )
+              img.story__img(
+                src=story.img
+              )
           .story__date-container.story__date-container_even
             .story__date
               .story__day
@@ -75,11 +77,13 @@ section.story-container
             .story__description
               = story.description
         else
-          .story__photo
-            img.story__img(
-              src=story.img
+          .story__photo-container
+            .story__photo(
               data-animation = "fadeInLeft"
             )
+              img.story__img(
+                src=story.img
+              )
           .story__date-container
             .story__date
               .story__day

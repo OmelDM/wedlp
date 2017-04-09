@@ -77,7 +77,7 @@
     align-items: center
     margin-bottom: 0
 
-  &__photo
+  &__photo-container
 
     @media (min-width: $sizeM)
       align-self: stretch
@@ -101,9 +101,16 @@
         border-left: 1px solid $nav-item-color
         border-right: none
 
+  &__photo
+    overflow: hidden
+
   &__img
     width: 100%
     display: block
+    transition: transform .75s
+
+    &:hover
+      transform: scale(1.1)
 
   &__date-container
     width: 64px

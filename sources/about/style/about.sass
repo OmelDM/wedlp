@@ -44,6 +44,7 @@ $sizeM: 1025px
 
   &__photo
     margin-bottom: 46px
+    overflow: hidden
 
     @media (min-width: $sizeS)
       margin-bottom: 58px
@@ -53,17 +54,17 @@ $sizeM: 1025px
       flex-shrink: 0
       margin-bottom: 0
 
-      &_male
-        padding-bottom: 36px
-
       &_female
-        padding-top: 36px
         order: 3
 
 
   &__img
     width: 100%
     display: block
+    transition: transform .75s
+
+    &:hover
+      transform: scale(1.1)
 
   &__details
     @media (min-width: $sizeM)

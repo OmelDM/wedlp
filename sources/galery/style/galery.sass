@@ -87,10 +87,16 @@
 
   &__link
     cursor: zoom-in
+    overflow: hidden
+    display: block
 
   &__img
     width: 100%
     display: block
+    transition: transform .75s
+
+    &:hover
+      transform: scale(1.1)
 
 [data-tag-current]
   color: $main-white-color
