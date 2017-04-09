@@ -1,0 +1,47 @@
+@import '../../style/variables'
+
+.preloader-container
+  background: $preloader-bg-color
+  z-index: 9999
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+
+.preloader
+  position: relative
+//   border: 1px solid $main-red-color
+//   border-top-color: darken($main-red-color, 20)
+//   animation: preloading 1s linear infinite
+//
+// @keyframes preloading
+//   from
+//     transform: rotate(0deg)
+//   to
+//     transform: rotate(360deg)
+
+.loader-top,
+.loader-bottom
+  width: 60px
+  height: 60px
+  position: absolute
+  border-radius: 50%
+  animation: preloading 1s linear infinite
+
+.loader-top
+  border-top: 1px solid $main-red-color
+
+.loader-bottom
+  top: 0
+  left: 0
+  border-bottom: 1px solid $main-red-color
+
+@keyframes preloading
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
