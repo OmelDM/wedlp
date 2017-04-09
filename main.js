@@ -137,6 +137,14 @@ function addMarker(cord) {
 }
 
 $(document).ready(function() {
+
+  Pace.on('done', function() {
+    $('#preloader').fadeOut();
+  });
+
+});
+
+$(document).ready(function() {
 });
 
 $(document).ready(function() {
