@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('#rsvpform').submit(function(event) {
     event.preventDefault();
 
-    if (isFormValid()) {
+    if (validate()) {
       sendForm(this);
     } else {
       showErrors();
@@ -11,8 +11,18 @@ $(document).ready(function() {
 
   });
 
-  function isFormValid() {
-    return true;
+  function validate() {
+    var result = true;
+    var name = $('[name="name"]').val();
+
+    if (!name) {
+      $('[name="name"]').addClass('has-error');
+      result = false;
+    } else {
+      $('[name="name"]').removeClass('has-error');
+    }
+
+    return result;
   }
 
   function sendForm(form) {

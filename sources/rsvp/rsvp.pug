@@ -3,11 +3,9 @@
   var thanksTitle = 'Благодарим';
   var thanksMessage = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
   var nameLabel = 'Ваше имя и фамилия *';
-  var nameRequired = 'Поле "Ваше имя и фамилия" пустое';
   var eventsLabel = 'Присутствие *';
-  var eventsRequired = 'Поле "Присутствие" пустое';
   var wishLabel = 'Текст пожелания';
-  var photoLabel = 'Ваше фото *';
+  var photoLabel = 'Ваше фото';
   var events = [
     {
       value: 'all',
@@ -53,8 +51,6 @@ section.rsvp-container#rsvp
           type = "text"
           name = "name"
           id = "name"
-          data-required = nameRequired
-          data-output-label = nameLabel
         )
       .rsvp__item
         label.form__label(
@@ -67,8 +63,6 @@ section.rsvp-container#rsvp
           id = "events"
           multiple
           data-select-event
-          data-required = eventsRequired
-          data-output-label = eventsLabel
         )
           - var index = 0;
           each event in events
