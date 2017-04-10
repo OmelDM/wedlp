@@ -1,12 +1,12 @@
 -
   var navList = [
     {href: '#about', title: 'О НАС'},
-    {href: '#history', title: 'НАША ИСТОРИЯ'},
-    {href: '#whereandwhen', title: 'ГДЕ И КОГДА'},
-    {href: '#shedule', title: 'ПРОГРАММА'},
-    {href: '#participation', title: 'УЧАСТИЕ'},
+    {href: '#story', title: 'НАША ИСТОРИЯ'},
+    {href: '#places', title: 'ГДЕ И КОГДА'},
+    {href: '#program', title: 'ПРОГРАММА'},
+    {href: '#rsvp', title: 'УЧАСТИЕ'},
     {href: '#guests', title: 'ГОСТИ'},
-    {href: '#gifts', title: 'ПОДАРКИ'},
+    {href: '#presents', title: 'ПОДАРКИ'},
     {href: '#gallery', title: 'ГАЛЕРЕЯ'},
     {href: '#contacts', title: 'КОНТАКТИ'}
   ];
@@ -25,6 +25,7 @@ mixin navigationItem(item, index)
       a.navigation__link(
         href=item.href
         title=item.title
+        data-smooth-scroll
       )= item.title
 
 mixin navigationItemSmall(item, index)
@@ -32,6 +33,7 @@ mixin navigationItemSmall(item, index)
     a.navigation__link.navigation__link_small(
       href=item.href
       title=item.title
+      data-smooth-scroll
     )= item.title
 
 //- CONTENT

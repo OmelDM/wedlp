@@ -1,6 +1,12 @@
 $(document).ready(function() {
 
-  $('.menu').click(function() {
+  $('[data-smooth-scroll]').smoothScroll({
+    beforeScroll: toogleMenu
+  });
+
+  $('.menu').click(toogleMenu);
+
+  function toogleMenu() {
     $('.navigation-container_small').toggleClass('navigation-container_active');
 
     if($('.menu__icon_burger').is(":visible")) {
@@ -10,5 +16,5 @@ $(document).ready(function() {
       $('.menu__icon_burger').show();
       $('.menu__icon_close').hide();
     }
-  });
+  }
 });
