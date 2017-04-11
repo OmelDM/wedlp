@@ -1,0 +1,413 @@
+-
+  var data = {
+    general: {
+      male: {
+        name: 'Кирил',
+        secondName: 'Василевский',
+        phone: '(066) 568 55 78',
+        mail: 'kiril.v@gmail.com',
+        instagram: 'https://instagram.com',
+        facebook: 'https://facebook.com',
+        vk: 'https://vk.com'
+      },
+      female: {
+        name: 'Татьяна',
+        secondName: 'Калинина',
+        phone: '(066) 743 99 00',
+        mail: 't.kalinina@gmail.com',
+        instagram: 'https://instagram.com',
+        facebook: 'https://facebook.com',
+        vk: 'https://vk.com'
+      }
+    },
+    hero: {
+      description: 'Нам очень нужна поддержка наших родных и друзей в этот чудесный день. Если вы читаете этот текст — значит вы один из тех замечательных людей, с которыми мы хотим разделить наше счастье.',
+      bgUrl: 'img/hero_bg.jpg'
+    },
+    counter: {
+      dateString: '16 сентября 2017 года',
+      year: 2017,
+      month: 8,
+      day: 16
+    },
+    about: {
+      male: {
+        photo: 'img/about_male.jpg',
+        about: 'Ну вот мы и подошли к новому рубежу нашей жизни. С трепетом ожидаю момента, когда одену кольцо на палец своей невесты. Немного волнительно все это. Cчастье переполняет, ведь это именно то, чего мы так давно ждали.'
+      },
+      female: {
+        photo: 'img/about_female.jpg',
+        about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Кирилла законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
+      }
+    },
+    story: {
+      stories: [
+        {
+          img: 'img/story_01.jpg',
+          day: '02',
+          month: '10.15',
+          title: 'Знакомство',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
+
+        },
+        {
+          img: 'img/story_02.jpg',
+          day: '10',
+          month: '10.15',
+          title: 'Первое свидание',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
+
+        },
+        {
+          img: 'img/story_03.jpg',
+          day: '25',
+          month: '10.15',
+          title: 'Первый поцелуй',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
+
+        },
+        {
+          img: 'img/story_04.jpg',
+          day: '10',
+          month: '01.17',
+          title: 'Предложение',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
+
+        }
+      ]
+    },
+    relatives: {
+      list: [
+        {
+          name: 'Михаил Василевский',
+          title: 'Отец жениха',
+          img: 'img/rel_01.jpg'
+        },
+        {
+          name: 'Тамила Василевский',
+          title: 'Мама жениха',
+          img: 'img/rel_02.jpg'
+        },
+        {
+          name: 'Владимир Даниленко',
+          title: 'Отец невесты',
+          img: 'img/rel_03.jpg'
+        },
+        {
+          name: 'Раиса Даниленко',
+          title: 'Мама невесты',
+          img: 'img/rel_04.jpg'
+        },
+        {
+          name: 'Валерий Василевский',
+          title: 'Дедушка жениха',
+          img: 'img/rel_05.jpg'
+        },
+        {
+          name: 'Вера Василевский',
+          title: 'Бабушка жениха',
+          img: 'img/rel_06.jpg'
+        },
+        {
+          name: 'Тарас Коновалець',
+          title: 'Дедушка невесты',
+          img: 'img/rel_07.jpg'
+        },
+        {
+          name: 'Маргарита Коновалець',
+          title: 'Бабушка невесты',
+          img: 'img/rel_08.jpg'
+        },
+        {
+          name: 'Лариса Василевская',
+          title: 'Сестра жениха',
+          img: 'img/rel_09.jpg'
+        },
+        {
+          name: 'Евгений Василевский',
+          title: 'Брат жениха',
+          img: 'img/rel_10.jpg'
+        },
+        {
+          name: 'Катерина Даниленко',
+          title: 'Сестра невесты',
+          img: 'img/rel_11.jpg'
+        },
+        {
+          name: 'Степан Даниленко',
+          title: 'Брат невесты',
+          img: 'img/rel_12.jpg'
+        }
+      ]
+    },
+    places: {
+      list: [
+        {
+          title: 'Венчание',
+          date: 'Суббота 16 сентября 2017 года',
+          time: '11:00',
+          address: 'Михайловский собор ул. Трьохсвятительская, 8',
+          cord: {
+            lat: 50.455668,
+            lng: 30.522774
+          }
+        },
+        {
+          title: 'Регистрация',
+          date: 'Суббота 16 сентября 2017 года',
+          time: '13:00',
+          address: 'ЗАГС пр. Перемоги, 11',
+          cord: {
+            lat: 50.448369,
+            lng: 30.478206
+          }
+        },
+        {
+          title: 'Ресторан',
+          date: 'Суббота 16 сентября 2017 года',
+          time: '18:00',
+          address: 'Адмирал Клуб ул. Варшавская, 116, г. Ирпень',
+          cord: {
+            lat: 50.539368,
+            lng: 30.268018
+          }
+        }
+      ]
+    },
+    program: {
+      events: [
+        {
+          name: 'Начало свадьбы',
+          time: '15:00',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          name: 'Регистрация',
+          time: '15:30',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          name: 'Банкет',
+          time: '18:00',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          name: 'Танцевальная программа',
+          time: '19:30',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+        {
+          name: 'Торт',
+          time: '22:00',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        },
+      ]
+    },
+    rsvp: {
+      events: [
+        {
+          value: 'all',
+          title: 'Все события'
+        },
+        {
+          value: 'wedding',
+          title: 'Венчание'
+        },
+        {
+          value: 'registry',
+          title: 'Регистрация'
+        },
+        {
+          value: 'restorant',
+          title: 'Ресторан'
+        }
+      ]
+    },
+    guests: {
+      list: [
+        {
+          name: 'Ольга Толкачева',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_01.jpg'
+        },
+        {
+          name: 'Василий Кушнарев',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_02.jpg'
+        },
+
+        {
+          name: 'Александра Вишневская',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_03.jpg'
+        },
+        {
+          name: 'Олег Смирнов',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_04.jpg'
+        },
+
+        {
+          name: 'Олег Смирнов',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_05.jpg'
+        },
+        {
+          name: 'Олег Смирнов',
+          description: 'Nullam notn bibendum dolor. Ut vel turpis accum',
+          img: 'img/guest_06.jpg'
+        }
+      ]
+    },
+    wishes: {
+      list: [
+        {
+          name: 'Ольга Толкачева',
+          description: 'Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э.',
+          img: 'img/wishes_01.jpg'
+        },
+        {
+          name: 'Василий Кушнарев',
+          description: 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.',
+          img: 'img/wishes_02.jpg'
+        },
+        {
+          name: 'Александра Вишневская',
+          description: 'Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.."',
+          img: 'img/wishes_03.jpg'
+        }
+      ]
+    },
+    presents: {
+      list: [
+        {
+          link: 'https://makeup.com.ua/',
+          img: 'img/present_01.jpg'
+        },
+        {
+          link: 'https://www.letu.ua',
+          img: 'img/present_02.png'
+        },
+        {
+          link: 'http://rozetka.com.ua/ua/',
+          img: 'img/present_03.png'
+        },
+        {
+          link: 'https://f.ua/',
+          img: 'img/present_04.png'
+        }
+      ]
+    },
+    gallery: {
+      list: [
+        {
+          title: 'Венчание',
+          photos: [
+            'img/galery_01.jpg'
+          ]
+        },
+        {
+          title: 'Регистрация',
+          photos: [
+            'img/galery_02.jpg',
+            'img/galery_06.jpg'
+          ]
+        },
+        {
+          title: 'Ресторан',
+          photos: [
+            'img/galery_03.jpg'
+          ]
+        },
+        {
+          title: 'Танцы',
+          photos: [
+            'img/galery_04.jpg'
+          ]
+        },
+        {
+          title: 'Видео',
+          photos: [
+            'img/galery_05.jpg'
+          ]
+        },
+      ]
+    }
+  };
+  
+  var navigation = {
+    list: [
+      {href: '#about', title: 'О НАС'},
+      {href: '#story', title: 'НАША ИСТОРИЯ'},
+      {href: '#places', title: 'ГДЕ И КОГДА'},
+      {href: '#program', title: 'ПРОГРАММА'},
+      {href: '#rsvp', title: 'УЧАСТИЕ'},
+      {href: '#guests', title: 'ГОСТИ'},
+      {href: '#presents', title: 'ПОДАРКИ'},
+      {href: '#gallery', title: 'ГАЛЕРЕЯ'},
+      {href: '#contacts', title: 'КОНТАКТЫ'}
+    ]
+  };
+  
+  var ui = {
+    general: {
+      showMore: 'Показать больше'
+    },
+    counter: {
+      title: 'Мы женимся'
+    },
+    about: {
+      maleTitle: 'Жених',
+      femaleTitle: 'Невеста'
+    },
+    story: {
+      title: 'НАША ИСТОРИЯ',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor.'
+    },
+    relatives: {
+      title: 'РОДСТВЕННИКИ',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.'
+      
+    },
+    places: {
+      title: 'Когда и Где'
+    },
+    program: {
+      title: 'Программа',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.'
+    },
+    rsvp: {
+      title: 'Вы придете?',
+      thanksTitle: 'Благодарим',
+      thanksMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      nameLabel: 'Ваше имя и фамилия *',
+      eventsLabel: 'Присутствие *',
+      wishLabel: 'Текст пожелания',
+      photoLabel: 'Ваше фото',
+      sendButtonLabel: 'Подтверждаю'
+    },
+    guests: {
+      title: 'Гости',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.'
+    },
+    wishes: {
+      title: 'Пожелания',
+      addButtonTitle: 'Написать'
+    },
+    presents: {
+      title: 'Список подарков',
+      description: 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.'
+      
+    },
+    gallery: {
+      title: 'Галерея',
+      allTitle: 'Все'
+    },
+    thanks: {
+      title: 'Благодарим!',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae.'
+    }
+    
+  };
+
+include index.pug

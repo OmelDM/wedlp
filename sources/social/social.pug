@@ -1,25 +1,20 @@
--
-  var insta = 'https://instagram.com';
-  var fb = 'https://facebook.com';
-  var vk = 'https://vk.com';
-
-mixin social(socialItemModifier)
+mixin social(person, socialItemModifier)
   .social
     a.social__item(
-      href=insta
-      target=_blank
-      class=socialItemModifier
+      href = person.instagram
+      target = _blank
+      class = socialItemModifier
     )
       include ../svg/insta.svg
     a.social__item(
-      href=fb
-      target=_blank
-      class=socialItemModifier
+      href = person.facebook
+      target = _blank
+      class = socialItemModifier
     )
       include ../svg/fb.svg
     a.social__item(
-      href=vk
-      target=_blank
-      class=socialItemModifier
+      href = person.vk
+      target = _blank
+      class = socialItemModifier
     )
       include ../svg/vk.svg

@@ -1,32 +1,3 @@
--
-  var headerTitle = 'Вы придете?';
-  var thanksTitle = 'Благодарим';
-  var thanksMessage = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
-  var nameLabel = 'Ваше имя и фамилия *';
-  var eventsLabel = 'Присутствие *';
-  var wishLabel = 'Текст пожелания';
-  var photoLabel = 'Ваше фото';
-  var events = [
-    {
-      value: 'all',
-      title: 'Все события'
-    },
-    {
-      value: 'wedding',
-      title: 'Венчание'
-    },
-    {
-      value: 'registry',
-      title: 'Регистрация'
-    },
-    {
-      value: 'restorant',
-      title: 'Ресторан'
-    }
-  ];
-  var rsvpButton = 'Подтверждаю';
-  var rsvpButtonSendingLabel = 'Отпраление...';
-
 section.rsvp-container#rsvp
   .rsvp(
     data-rsvp-main
@@ -34,7 +5,7 @@ section.rsvp-container#rsvp
     h1.rsvp__title(
       data-animation = "fadeInUp"
     )
-      = headerTitle
+      = ui.rsvp.title
     form.rsvp__form#rsvpform(
       autocomplete
       method = "post"
@@ -45,7 +16,7 @@ section.rsvp-container#rsvp
         label.form__label(
           for = "name"
         )
-          = nameLabel
+          = ui.rsvp.nameLabel
         br
         input.form__input.ajax-input(
           type = "text"
@@ -56,7 +27,7 @@ section.rsvp-container#rsvp
         label.form__label(
           for = "events"
         )
-          = eventsLabel
+          = ui.rsvp.eventsLabel
         br
         select.form__select.ajax-input(
           name = "events[]"
@@ -65,7 +36,7 @@ section.rsvp-container#rsvp
           data-select-event
         )
           - var index = 0;
-          each event in events
+          each event in data.rsvp.events
             if index === 0
               option.form__option(
                 selected
@@ -82,37 +53,34 @@ section.rsvp-container#rsvp
         label.form__label(
             for = "wish"
         )
-          = wishLabel
+          = ui.rsvp.wishLabel
         br
         textarea.form__textarea.ajax-input(
           name="wish"
           id="wish"
           rows="5"
-          data-output-label = wishLabel
         )
       .rsvp__item
         label.form__label(
             for = "photo"
         )
-          = photoLabel
+          = ui.rsvp.photoLabel
         br
         input.ajax-input(
           name = "photo"
           id = "photo"
           type = "file"
-          data-output-label = photoLabel
         )
       .rsvp__item
         input.button#submitButton(
           name = "submit"
           type = "submit"
-          value = rsvpButton
-          data-sending-label = rsvpButtonSendingLabel
+          value = ui.rsvp.sendButtonLabel
         )
   .rsvp.rsvp_thanks.hidden(
     data-rsvp-thanks
   )
     h1.rsvp__title
-      = thanksTitle
+      = ui.rsvp.thanksTitle
     .description.description_small
-      = thanksMessage
+      = ui.rsvp.thanksMessage

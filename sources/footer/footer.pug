@@ -1,21 +1,9 @@
--
-  var male = {
-    name: ' Кирилл Василевский',
-    phone: '(066) 568 55 78',
-    mail: 'kiril.v@gmail.com'
-  };
-  var female = {
-    name: 'Татьяна Калинина',
-    phone: '(066) 743 99 00',
-    mail: 't.kalinina@gmail.com'
-  };
-
 include ../logo/logo.pug
 include ../social/social.pug
 
 mixin info(person)
   .info__name
-    = person.name
+    = person.name + ' ' + person.secondName
   .info__contacts
     a.info__link(href="tel:"+person.phone)
       = person.phone
@@ -31,12 +19,12 @@ footer.footer-container#contacts
     .info.info_male(
       data-animation = "fadeInLeft"
     )
-      +info(male)
+      +info(data.general.male)
       .info__social.info__social_male
-        +social('social__item_bottom')
+        +social(data.general.male, 'social__item_bottom')
     .info.info_female(
       data-animation = "fadeInRight"
     )
-      +info(female)
+      +info(data.general.female)
       .info__social.info__social_female
-        +social('social__item_bottom')
+        +social(data.general.female, 'social__item_bottom')

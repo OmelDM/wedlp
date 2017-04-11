@@ -48,9 +48,9 @@ header.header-container
   .header.header_large
     nav.navigation-container
       ul.navigation
-        each navItem, index in navList
+        each navItem, index in navigation.list
           +navigationItem(navItem, index)
 nav.navigation-container.navigation-container_small
   ul.navigation.navigation_small
-    each navItem, index in navList
+    each navItem, index in navigation.list
       +navigationItemSmall(navItem, index)

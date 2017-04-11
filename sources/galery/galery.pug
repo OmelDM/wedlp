@@ -40,7 +40,7 @@ section.galery-container#gallery
     h1.galery__title(
       data-animation = "fadeInUp"
     )
-      = headerTitle
+      = ui.gallery.title
     ul.galery__nav(
       data-animation = "fadeInUp"
     )
@@ -49,16 +49,16 @@ section.galery-container#gallery
           data-tag-target='tag_all'
           data-tag-current
         )
-          = allTitle
+          = ui.gallery.allTitle
       - var index = 0;
-      each galery in galeries
+      each galery in data.gallery.list
         li.galery__nav-item
           button.galery__nav-title(data-tag-target='tag_'+index)
             = galery.title
         - index++;
     .galery__content
       - var tagNum = 0;
-      each galery in galeries
+      each galery in data.gallery.list
         - var tag = 'tag_'+tagNum
         each photo in galery.photos
           .galery__item(

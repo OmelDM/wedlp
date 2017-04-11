@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = './sources/**/*.html'
-	, TEMPLATES_PATH = './sources/*.pug'
+	, TEMPLATES_PATH = './sources/main.pug'
 	, TEMPLATES_WATCH_PATH = './sources/**/*.pug'
 	, STYLESHEETS_PATHs = ['./sources/**/*.scss', './sources/**/*.sass', './sources/**/*.css']
 	, JS_PATH = ['./sources/**/*.js', '!./sources/js/*']

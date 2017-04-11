@@ -1,41 +1,3 @@
--
-  var headerTitle = 'НАША ИСТОРИЯ';
-  var headerDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor.';
-  var stories = [
-    {
-      img: 'img/story_01.jpg',
-      day: '02',
-      month: '10.15',
-      title: 'Знакомство',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
-
-    },
-    {
-      img: 'img/story_02.jpg',
-      day: '10',
-      month: '10.15',
-      title: 'Первое свидание',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
-
-    },
-    {
-      img: 'img/story_03.jpg',
-      day: '25',
-      month: '10.15',
-      title: 'Первый поцелуй',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
-
-    },
-    {
-      img: 'img/story_04.jpg',
-      day: '10',
-      month: '01.17',
-      title: 'Предложение',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae commodo. Phasellus condimentum, mi ut sodales gravida.'
-
-    }
-  ];
-
 section.story-container#story
   .story-header-container
     .story-header(
@@ -43,13 +5,13 @@ section.story-container#story
     )
       img.story-header__img(src='img/story_birds.png')
       h1.story-header__title
-        = headerTitle
+        = ui.story.title
       .story-header__description
-        = headerDescription
+        = ui.story.description
 
   .story-list
     - var index = 0;
-    each story in stories
+    each story in data.story.stories
       -
         var isEven = index % 2 !== 0;
         index++;

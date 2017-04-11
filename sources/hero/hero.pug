@@ -1,20 +1,17 @@
--
-  var femaleName = 'ТАТЬЯНА';
-  var maleName = 'КИРИЛЛ';
-  var description = 'Нам очень нужна поддержка наших родных и друзей в этот чудесный день. Если вы читаете этот текст — значит вы один из тех замечательных людей, с которыми мы хотим разделить наше счастье.';
-
-section.hero-container(data-background-url='img/hero_bg.jpg')
+section.hero-container(
+  data-background-url = data.hero.bgUrl
+)
   .hero
     .hero__title(
       data-animation = "fadeInUp"
     )
       .hero__name
-        = femaleName
+        = data.general.female.name
       .hero__heart
         include ../svg/heart.svg
       .hero__name
-        = maleName
+        = data.general.male.name
     .hero__description(
       data-animation = "fadeInUp"
     )
-      = description
+      = data.hero.description

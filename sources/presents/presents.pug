@@ -1,37 +1,15 @@
--
-  var headerTitle = 'Список подарков';
-  var headerDescription = 'Nullam notn bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus.';
-  var presents = [
-    {
-      link: 'https://makeup.com.ua/',
-      img: 'img/present_01.jpg'
-    },
-    {
-      link: 'https://www.letu.ua',
-      img: 'img/present_02.png'
-    },
-    {
-      link: 'http://rozetka.com.ua/ua/',
-      img: 'img/present_03.png'
-    },
-    {
-      link: 'https://f.ua/',
-      img: 'img/present_04.png'
-    }
-  ];
-
 section.presents-container#presents
   .presents
     h1.presents__title(
       data-animation = "fadeInUp"
     )
-      = headerTitle
+      = ui.presents.title
     .presents__description(
       data-animation = "fadeInUp"
     )
-      = headerDescription
+      = ui.presents.description
     .presents__list
-      each present in presents
+      each present in data.presents.list
         .present(
           data-animation = "zoomIn"
         )

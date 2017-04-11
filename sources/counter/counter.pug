@@ -1,41 +1,17 @@
--
-  var title = 'Мы женимся';
-  var dateString = '16 сентября 2017 года';
-  var days = 'дней';
-  var hours = 'часов';
-  var minutes = 'минут';
-  var seconds = 'секунд';
-
 section.counter-container
-  .counter
+  .counter#counter(
+    data-counter-year = data.counter.year
+    data-counter-month = data.counter.month
+    data-counter-day = data.counter.day
+  )
     h1.counter__title(
       data-animation = "fadeInUp"
     )
-      = title
+      = ui.counter.title
     .counter__description(
       data-animation = "fadeInUp"
     )
-      = dateString
+      = data.counter.dateString
     ul.counter__time(
       data-animation = "fadeInUp"
     )
-      //- li.counter__item
-      //-   .counter__value
-      //-     span 111
-      //-   .counter__measurement
-      //-     = days
-      //- li.counter__item
-      //-   .counter__value
-      //-     span 10
-      //-   .counter__measurement
-      //-     = hours
-      //- li.counter__item
-      //-   .counter__value
-      //-     span 55
-      //-   .counter__measurement
-      //-     = minutes
-      //- li.counter__item
-      //-   .counter__value
-      //-     span 02
-      //-   .counter__measurement
-      //-     = seconds

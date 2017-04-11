@@ -1,18 +1,3 @@
--
-  var malePerson = {
-    photo: 'img/about_male.jpg',
-    name: 'Кирилл Василевский',
-    title: 'Жених',
-    about: 'Ну вот мы и подошли к новому рубежу нашей жизни. С трепетом ожидаю момента, когда одену кольцо на палец своей невесты. Немного волнительно все это. Cчастье переполняет, ведь это именно то, чего мы так давно ждали.'
-  };
-
-  var femalePerson = {
-    photo: 'img/about_female.jpg',
-    name: 'Татьяна Калинина',
-    title: 'Невеста',
-    about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Кирилла законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
-  };
-
 include ../social/social.pug
 
 section.about-container#about
@@ -21,38 +6,42 @@ section.about-container#about
       .person__photo.person__photo_male(
         data-animation = "fadeInLeft"
       )
-        img.person__img(src=malePerson.photo)
+        img.person__img(
+          src = data.about.male.photo
+        )
       .person__title.person__title_male
         .person__transformed.person__transformed_male
-          = malePerson.title
+          = ui.about.maleTitle
       .person__details.person__details_male(
         data-animation = "fadeInRight"
       )
         .person__name
-          = malePerson.name
+          = data.general.male.name + ' ' + data.general.male.secondName
         .person__title
-          = malePerson.title
+          = ui.about.maleTitle
         .person__about
-          = malePerson.about
+          = data.about.male.about
         .person__social.person__social_male
-          +social
+          +social(data.general.male)
 
     .person.person_female
       .person__photo.person__photo_female(
         data-animation = "fadeInRight"
       )
-        img.person__img(src=femalePerson.photo)
+        img.person__img(
+          src = data.about.female.photo
+        )
       .person__title.person__title_female
         .person__transformed.person__transformed_female
-          = femalePerson.title
+          = ui.about.femaleTitle
       .person__details.person__details_female(
         data-animation = "fadeInLeft"
       )
         .person__name
-          = femalePerson.name
+          = data.general.female.name + ' ' + data.general.female.secondName
         .person__title
-          = femalePerson.title
+          = ui.about.femaleTitle
         .person__about
-          = femalePerson.about
+          = data.about.female.about
         .person__social.person__social_female
-          +social
+          +social(data.general.female)
