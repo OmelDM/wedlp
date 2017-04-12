@@ -1,20 +1,23 @@
 mixin social(person, socialItemModifier)
   .social
-    a.social__item(
-      href = person.instagram
-      target = _blank
-      class = socialItemModifier
-    )
-      include ../svg/insta.svg
-    a.social__item(
-      href = person.facebook
-      target = _blank
-      class = socialItemModifier
-    )
-      include ../svg/fb.svg
-    a.social__item(
-      href = person.vk
-      target = _blank
-      class = socialItemModifier
-    )
-      include ../svg/vk.svg
+    - if (person.instagram)
+      a.social__item(
+        href = person.instagram
+        target = _blank
+        class = socialItemModifier
+      )
+        include ../svg/insta.svg
+    - if (person.facebook)
+      a.social__item(
+        href = person.facebook
+        target = _blank
+        class = socialItemModifier
+      )
+        include ../svg/fb.svg
+    - if (person.vk)
+      a.social__item(
+        href = person.vk
+        target = _blank
+        class = socialItemModifier
+      )
+        include ../svg/vk.svg
