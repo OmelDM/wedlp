@@ -1,23 +1,37 @@
+mixin includeSocialIcon(social)
+  if ('instagram' === social)
+    include ../svg/insta.svg
+  else if ('facebook' === social)
+    include ../svg/fb.svg
+  else if ('vk' === social)
+    include ../svg/vk.svg
+
+mixin makeSocialLink(url, modifier, social)
+  a.social__item(
+    href = url
+    target = _blank
+    class = modifier
+  )
+    +includeSocialIcon(social)
+
+mixin emptySocial(itemModifier, social)
+  .social__item.social__item_empty(
+    class = itemModifier
+    title = ui.general.empty
+  )
+    +includeSocialIcon(social)
+
 mixin social(person, socialItemModifier)
   .social
-    - if (person.instagram)
-      a.social__item(
-        href = person.instagram
-        target = _blank
-        class = socialItemModifier
-      )
-        include ../svg/insta.svg
-    - if (person.facebook)
-      a.social__item(
-        href = person.facebook
-        target = _blank
-        class = socialItemModifier
-      )
-        include ../svg/fb.svg
-    - if (person.vk)
-      a.social__item(
-        href = person.vk
-        target = _blank
-        class = socialItemModifier
-      )
-        include ../svg/vk.svg
+    if (person.instagram)
+      +makeSocialLink(person.instagram, socialItemModifier, 'instagram')
+    else
+      +emptySocial(socialItemModifier, 'instagram')
+    if (person.facebook)
+      +makeSocialLink(person.facebook, socialItemModifier, 'facebook')
+    else
+      +emptySocial(socialItemModifier, 'facebook')
+    if (person.vk)
+      +makeSocialLink(person.vk, socialItemModifier, 'vk')
+    else
+      +emptySocial(socialItemModifier, 'vk')
