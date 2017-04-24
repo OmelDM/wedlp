@@ -1,0 +1,378 @@
+-
+  var data = {
+    general: {
+      male: {
+        name: 'Сергей',
+        secondName: 'Омельчук',
+        phone: '+38 066 662-07-04',
+        mail: '',
+        instagram: '',
+        facebook: 'https://www.facebook.com/sergiy.omelchuk.1',
+        vk: ''
+      },
+      female: {
+        name: 'Алина',
+        secondName: 'Чечет',
+        phone: '+38099 255-12-25',
+        mail: '',
+        instagram: '',
+        facebook: 'https://www.facebook.com/profile.php?id=100009253099054',
+        vk: ''
+      }
+    },
+    hero: {
+      description: 'Очень хотим разделить этот памятный и счастливый день вместе с вами! Будет очень здорово если вы найдете возможность быть одним из участников данного торжества. Обещаем, будет весело!',
+      bgUrl: 'saimg/hero_bg.jpg'
+    },
+    counter: {
+      dateString: '2 мая 2017 года',
+      year: 2017,
+      month: 4,
+      day: 2
+    },
+    about: {
+      male: {
+        photo: 'saimg/about_male.jpg',
+        about: 'Ну вот мы и подошли к новому рубежу нашей жизни. С трепетом ожидаю момента, когда одену кольцо на палец своей невесты. Немного волнительно все это. Cчастье переполняет, ведь это именно то, чего мы так давно ждали.'
+      },
+      female: {
+        photo: 'saimg/about_female.jpg',
+        about: 'Очень скоро наступит тот день, когда я официально смогу назвать своего любимого Сергея законным супругом.Мы долго шли к этому и тщательно готовились к свадьбе. Надеюсь, что гости оценят наши старания и все пройдет на ура!'
+      }
+    },
+    story: {
+      stories: [
+        {
+          img: 'saimg/story/photo1.jpg',
+          day: '01',
+          month: '04.10',
+          title: 'НАША ПЕРВАЯ ВСТРЕЧА',
+          description: 'Первая встреча произошла на «територии» будущей невесты. Я (Сергей) с ребятами после очередного футбольного матча решили пойти в общежитие механико-математического факультета университета им. Т.Шевченка искать невест )) У кого у кого, но у меня это получилось'
+
+        },
+        {
+          img: 'saimg/story/photo2.jpg',
+          day: '06',
+          month: '06.10',
+          title: 'ПЕРВОЕ СВИДАНИЕ',
+          description: 'Первое свидание было спустя несколько недель после знакомства, мы ходили на мультфильм «Ледниковый период». Встреча была интересна тем что нам с другом удалось купить билеты только в первом ряду, да еще и опоздали на 15 мин. Но несмотря на это наши с Алиной отношения продолжились в правильном направлении.'
+
+        },
+        {
+          img: 'saimg/story/photo3.jpg',
+          day: '07',
+          month: '08.10',
+          title: 'ПРЕДЛОЖЕНИЕ',
+          description: 'Предложение руки и сердца я сделал поздним  вечером на смотровой площадке Киева. Завязав глаза Алине посадил в машину и отвез ее на место откуда Киев виден как на ладони. Ответ был положительным! Позже она призналась что догадывалась о моих намерениях ))'
+        },
+        {
+          img: 'saimg/story/photo4.jpg',
+          day: '',
+          month: '',
+          title: 'Интерсеные моменты',
+          description: '– Алина всегда училась хорошо и первую «3» в университете она получила начав встречаться со мной. Вместо подготовки к экзамену пошла на свидание! В итоге она не прогадала ))<br>– Номер комнаты Алины в общежитии «442». Те кто немного знаком с футболом поймут в чем секрет ))<br>– Чтобы поехать вместе на отдых по путевкам университета Шевченко и жить в одной комнате, мне пришлось «быть по документам» Кристиной неделю<br>– Сергей – Козерог, Алина – Овен и это очень странно что мы сошлись. Ни один гороскоп не понимает как у нас это получилось ))))'
+        }
+      ]
+    },
+    relatives: {
+      list: [
+        {
+          name: 'Николай Иванович',
+          title: 'Отец жениха',
+          img: 'saimg/relatives/rel1.jpg'
+        },
+        {
+          name: 'Любовь Федоровна',
+          title: 'Мама жениха',
+          img: 'saimg/relatives/rel2.jpg'
+        },
+        {
+          name: 'Юрий Алексеевич',
+          title: 'Отец невесты',
+          img: 'saimg/relatives/rel3.jpg'
+        },
+        {
+          name: 'София Степановна',
+          title: 'Мама невесты',
+          img: 'saimg/relatives/rel4.jpg'
+        },
+        {
+          name: 'бабушка Галя',
+          title: 'Бабушка жениха',
+          img: 'saimg/relatives/rel7.jpg'
+        },
+        {
+          name: 'Дима',
+          title: 'Брат жениха',
+          img: 'saimg/relatives/rel5.jpg'
+        },
+        {
+          name: 'Алена',
+          title: 'Сестра невесты',
+          img: 'saimg/relatives/rel6.jpg'
+        }
+      ]
+    },
+    places: {
+      list: [
+        {
+          title: 'Выкуп невесты',
+          date: 'Вторник 2 мая 2010 года',
+          time: '11:00',
+          address: 'Дом невесты, ул. Мицкевича 32',
+          cord: {
+            lat: 50.622221,
+            lng: 26.253571
+          }
+        },
+        {
+          title: 'Регистрация',
+          date: 'Вторник 2 мая 2010 года',
+          time: '12:00',
+          address: 'Центральный ЗАГС, Ровно, пр. Мира 14',
+          cord: {
+            lat: 50.625443,
+            lng: 26.247613
+          }
+        },
+        {
+          title: 'Венчание',
+          date: 'Вторник 2 мая 2010 года',
+          time: '14:00',
+          address: 'Свято-Воскресенский собор, ул. Соборная 39',
+          cord: {
+            lat: 50.619281,
+            lng: 26.249330
+          }
+        },
+        {
+          title: 'Фотосессия, прогулка',
+          date: 'Вторник 2 мая 2010 года',
+          time: '15:00',
+          address: 'Парк молодежи, ул. Драгоманова 1',
+          cord: {
+            lat: 50.615957,
+            lng: 26.246485
+          }
+        },
+        {
+          title: 'Гулянка',
+          date: 'Вторник 2 мая 2010 года',
+          time: '18:00',
+          address: 'Ресторан Хутир, с. Велика Омеляна, ул Дубенская 11б',
+          cord: {
+            lat: 50.584868,
+            lng: 26.144418
+          }
+        }
+      ]
+    },
+    program: {
+      events: [
+        {
+          name: 'Трансфер',
+          time: '00:00',
+          description: 'Из Киева будет выезжать 4-5 машин, у всех есть свободные места, по этому кто не на машине можете созваниваться с Димой (066 - 098-09-09) - он ответственный за организацию поездки. Также удобно можно добраться маршруткой (около 4-5 часов езды), они отправляются каждый час с жд вокзала. Где жить смотрите в разделе Проживание'
+        },
+        {
+          name: ' Выкуп невесты',
+          time: '11:00',
+          description: 'Кому будет интересно приезжайте на выкуп невесты, он будет проходить в доме где остановиться Алина с 11.00'
+        },
+        {
+          name: 'ЗАГС',
+          time: '12:00',
+          description: 'В 12.00 всех ждем в ЗАГСе где пройдет церемония бракосочетания'
+        },
+        {
+          name: 'Венчание',
+          time: '14:00',
+          description: 'Венчание будет в 14.00 в Свято-Воскресенском соборе'
+        },
+        {
+          name: 'Фотосессия',
+          time: '16:00',
+          description: 'Дальше молодожены едут на фотосессию в Парк Молодежи. Кому интересно можете присоединяться, многие будут на машинах, так что места всем хватит. Остальных будет ждать автобус, который отвезет в ресторан Хутор, там будет небольшой фуршет. Кто будет проживать в отелях, смогут в это время разместиться в номерах и отдохнуть'
+        },
+        {
+          name: 'Ресторан',
+          time: '18:00',
+          description: 'Основной праздник начнется в 18.00 в ресторане Хутор и продлится до "последнего клиента"'
+        },
+        {
+          name: 'Проживание',
+          time: '00:00',
+          description: 'Для гостей из других городов будут забронированы номера непосредственно в комплексе Хутор, а также в отелях в 100 м от Хутора. Ответсвтенный за поселение Дима (098 - 089-09-09), звоните ему, у него вся информация кто и где будет жить'
+        },
+      ]
+    },
+    rsvp: {
+      events: [
+        {
+          value: 'all',
+          title: 'Все события'
+        },
+        {
+          value: 'wedding',
+          title: 'Венчание'
+        },
+        {
+          value: 'registry',
+          title: 'Регистрация'
+        },
+        {
+          value: 'restorant',
+          title: 'Ресторан'
+        }
+      ]
+    },
+    guests: {
+      list: [
+        {
+          name: 'Дима',
+          description: 'брат',
+          img: 'saimg/guests/dima.jpg'
+        },
+        {
+          name: 'Валера',
+          description: 'однокласник',
+          img: 'saimg/guests/valera.jpg'
+        },
+        {
+          name: 'Саша',
+          description: 'свидетель',
+          img: 'saimg/guests/maslov.jpg'
+        },
+        {
+          name: 'Сергей',
+          description: 'футболист',
+          img: 'saimg/guests/melnik.jpg'
+        },
+        {
+          name: 'Сергей',
+          description: 'ловелас',
+          img: 'saimg/guests/serg.jpg'
+        },
+        {
+          name: 'Виталий',
+          description: 'друг',
+          img: 'saimg/guests/vitaliy.jpg'
+        },
+        {
+          name: 'Валик',
+          description: 'кум',
+          img: 'saimg/guests/valik.jpg'
+        },
+        {
+          name: 'Вова',
+          description: 'друг',
+          img: 'saimg/guests/vova.jpg'
+        },
+        {
+          name: 'Дима',
+          description: 'друг',
+          img: 'saimg/guests/zub.jpg'
+        },
+        {
+          name: 'Алена',
+          description: 'сестра',
+          img: 'saimg/guests/alena.jpg'
+        },
+        {
+          name: 'Даша',
+          description: 'свидетельница',
+          img: 'saimg/guests/dasha.jpg'
+        },
+        {
+          name: 'Наташа',
+          description: 'свидетельница',
+          img: 'saimg/guests/natasha.jpg'
+        },
+        {
+          name: 'Юля',
+          description: 'подружка',
+          img: 'saimg/guests/julia.jpg'
+        },
+        {
+          name: 'Света',
+          description: 'подружка',
+          img: 'saimg/guests/sveta.jpg'
+        },
+        {
+          name: 'Оксана',
+          description: 'однокласница',
+          img: 'saimg/guests/oksana.jpg'
+        },
+        {
+          name: 'Настя',
+          description: 'подружка',
+          img: 'saimg/guests/nastya.jpg'
+        },
+        {
+          name: 'Люда',
+          description: 'подружка',
+          img: 'saimg/guests/luda.jpg'
+        }        
+      ]
+    },
+    wishes: {
+      list: [
+        {
+          name: '',
+          description: 'Ты можешь быть первым! Пожелай что-то молодоженам! Поверь, им будет очень приятно!',
+          img: 'saimg/wishes/wish1.jpg'
+        }
+      ]
+    },
+    presents: {
+      list: [
+        {
+          link: 'https://my.rozetka.com.ua/wishlists/list=a08b53baa5405795/',
+          img: 'img/present_03.png'
+        },
+        {
+          link: 'https://f.ua/wishlist/IWQP52d2B0Lh/',
+          img: 'img/present_04.png'
+        }
+      ]
+    },
+    gallery: {
+      list: [
+        {
+          title: 'Досвадебные',
+          photos: [
+            'saimg/gallery/04/photo1.jpg',
+            'saimg/gallery/04/photo2.jpg',
+            'saimg/gallery/04/photo3.jpg',
+            'saimg/gallery/04/photo4.jpg',
+            'saimg/gallery/04/photo5.jpg',
+            'saimg/gallery/04/photo6.jpg',
+            'saimg/gallery/04/photo7.jpg',
+            'saimg/gallery/04/photo8.jpg',
+            'saimg/gallery/04/photo9.jpg',
+            'saimg/gallery/04/photo10.jpg',
+            'saimg/gallery/04/photo11.jpg',
+            'saimg/gallery/04/photo12.jpg',
+            'saimg/gallery/04/photo13.jpg',
+            'saimg/gallery/04/photo14.jpg',
+            'saimg/gallery/04/photo15.jpg',
+            'saimg/gallery/04/photo16.jpg',
+            'saimg/gallery/04/photo17.jpg',
+            'saimg/gallery/04/photo18.jpg',
+            'saimg/gallery/04/photo19.jpg',
+            'saimg/gallery/04/photo20.jpg',
+            'saimg/gallery/04/photo21.jpg',
+            'saimg/gallery/04/photo22.jpg',
+            'saimg/gallery/04/photo23.jpg',
+            'saimg/gallery/04/photo24.jpg',
+            'saimg/gallery/04/photo25.jpg'
+          ]
+        }
+      ]
+    },
+    thanks: {
+      bgImage: 'saimg/thanks_bg.jpg'
+    }
+  };
+
+include ../../sources/index.pug

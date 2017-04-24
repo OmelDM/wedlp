@@ -8,7 +8,8 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCSS = require('gulp-clean-css'),
 	del = require('del'),
-	deploy = require('gulp-gh-pages');
+	deploy = require('gulp-gh-pages'),
+	util = require('gulp-util');
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = './sources/**/*.html'
@@ -19,8 +20,12 @@ var BUILD_DIR = './build/'
 	, ASSETS_DIR = './assets/**/*'
 	, FONTS_DIR = './sources/fonts/*';
 
+var dataFolder = './data/' + (util.env.data ? util.env.data : 'test');
+var mainDataFile = dataFolder + '/main.pug';
+
 gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'assets', 'fonts', 'connect', 'watch']);
 gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'assets', 'fonts']);
+gulp.task('build', ['clean', 'pug', 'css', 'js', 'assets', 'fonts']);
 
 gulp.task('deploy', ['release'], function () {
   return gulp.src("./build/**/*")
@@ -28,7 +33,7 @@ gulp.task('deploy', ['release'], function () {
 });
 
 gulp.task('clean', function() {
-	del(BUILD_DIR);
+	return del(BUILD_DIR);
 });
 
 gulp.task('html', function() {
@@ -38,7 +43,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('pug', function() {
-  return gulp.src(TEMPLATES_PATH)
+  return gulp.src(mainDataFile)
   .pipe(pug())
 	.pipe(concat('index.html'))
 	.pipe(gulp.dest(BUILD_DIR))
@@ -71,7 +76,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('assets', function() {
-	return gulp.src(ASSETS_DIR)
+	return gulp.src([ASSETS_DIR, dataFolder + '/assets/**/*'])
 		.pipe(gulp.dest(BUILD_DIR))
 		.pipe(connect.reload());
 });
@@ -90,5 +95,5 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch([HTML_PATH, TEMPLATES_WATCH_PATH, JS_PATH, STYLESHEETS_PATHs, ASSETS_DIR], ['html', 'pug', 'css', 'js', 'assets', 'fonts']);
+	gulp.watch([HTML_PATH, TEMPLATES_WATCH_PATH, JS_PATH, STYLESHEETS_PATHs, ASSETS_DIR, mainDataFile], ['html', 'pug', 'css', 'js', 'assets', 'fonts']);
 });
