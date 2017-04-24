@@ -37,7 +37,7 @@ section.story-container#story
             .story__title
               = story.title
             .story__description
-              = story.description
+              != story.description
         else
           .story__photo-container
             .story__photo(
