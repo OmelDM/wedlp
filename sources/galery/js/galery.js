@@ -8,16 +8,29 @@ $(document).ready(function() {
     }
   });
 
-  $('[data-tag-target]').click(function() {
-    $('[data-tag-current]').removeAttr('data-tag-current');
-    $(this).attr('data-tag-current', 'true');
-    var targetTag = $(this).data('tag-target');
-    if ('tag_all' === targetTag) {
-      $('[data-tag]').show();
-    } else {
-      $('[data-tag='+targetTag+']').show();
-      $('[data-tag]').not('[data-tag='+targetTag+']').hide();
+  $(".owl-carousel").owlCarousel({
+    nav:true,
+    dots: false,
+    navText: [],
+    autoplay: true,
+    loop: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        },
+        1400:{
+            items:4
+        },
+        1700:{
+            items:5
+        }
     }
-  });
+});
 
 });
