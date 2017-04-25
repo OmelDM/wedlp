@@ -1,11 +1,17 @@
 $(document).ready(function() {
 
-  $('[data-animation]').css('visibility', 'hidden');
+  var ANIMATION_MIN_WIDTH = 768;
+
+  if (ANIMATION_MIN_WIDTH < window.innerWidth) {
+    $('[data-animation]').css('visibility', 'hidden');
+  }
 
   $('[data-animation]').one('inview', function() {
-    var animationType = 'animated ' + $(this).data('animation');
-    $(this).addClass(animationType);
-    $(this).css('visibility', 'visible');
+    if (ANIMATION_MIN_WIDTH < window.innerWidth) {
+      var animationType = 'animated ' + $(this).data('animation');
+      $(this).addClass(animationType);
+      $(this).css('visibility', 'visible');
+    }
   })
 
 });
