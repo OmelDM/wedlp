@@ -13,3 +13,12 @@ section.galery-container#gallery
                 data-magnigic-popup
               )
               img.galery__img(src = photo)
+        if (galery.videos)
+          each video in galery.videos
+            .galery__item
+              a.galery__link.galery__link_video.mfp-iframe(
+                  href = video.img
+                  data-mfp-src = video.src
+                  data-magnigic-popup
+                )
+                img.galery__img.galery__img_video(src = video.img)
