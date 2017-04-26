@@ -1,31 +1,49 @@
 $(document).ready(function() {
 
+  var ANIMATION_MIN_WIDTH = 768;
+
   $('[data-animation]').css('visibility', 'hidden');
 
   $('[data-animation]').one('inview', function() {
-    var animationType = 'animated ' + $(this).data('animation');
-    $(this).addClass(animationType);
+    if (ANIMATION_MIN_WIDTH < window.innerWidth) {
+      var animationType = 'animated ' + $(this).data('animation');
+      $(this).addClass(animationType);
+
+    }
     $(this).css('visibility', 'visible');
   })
 
 });
 
-$(document).ready(function() {
-});
 
-function block (argument) {
-  // body...
-}
 $(document).ready(function() {
   function makeTemplate(period) {
     return '<li class="counter__item"><div class="counter__value"><span>{'+period+'n}</span></div><div class="counter__measurement">{'+period+'l}</div></li>'
   }
 
-  $('.counter__time').countdown({
-    until: new Date(2017, 8, 16),
-    format: 'DHMS',
-    layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
-  });
+  var year = $('#counter').data('counter-year');
+  var month = $('#counter').data('counter-month');
+  var day = $('#counter').data('counter-day');
+
+  var today = new Date();
+  var weddingDay = new Date(year, month, day);
+  if (weddingDay < today) {
+    $('.counter__time').countdown({
+      since: new Date(year, month, day + 1),
+      format: 'DHMS',
+      layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
+    });
+    $('.counter__title').text($('#counter').data('counter-expired-title'));
+    $('.counter__description').hide();
+
+  } else {
+    $('.counter__time').countdown({
+      until: new Date(year, month, day),
+      format: 'DHMS',
+      layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
+    });
+  }
+
 });
 
 
@@ -39,17 +57,30 @@ $(document).ready(function() {
     }
   });
 
-  $('[data-tag-target]').click(function() {
-    $('[data-tag-current]').removeAttr('data-tag-current');
-    $(this).attr('data-tag-current', 'true');
-    var targetTag = $(this).data('tag-target');
-    if ('tag_all' === targetTag) {
-      $('[data-tag]').show();
-    } else {
-      $('[data-tag='+targetTag+']').show();
-      $('[data-tag]').not('[data-tag='+targetTag+']').hide();
+  $(".owl-carousel").owlCarousel({
+    nav:true,
+    dots: false,
+    navText: [],
+    autoplay: true,
+    loop: true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        },
+        1400:{
+            items:4
+        },
+        1700:{
+            items:5
+        }
     }
-  });
+});
 
 });
 
@@ -150,8 +181,6 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function() {
-});
 
 $(document).ready(function() {
   $('[data-accardion-header]').click(function() {
@@ -235,9 +264,6 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-
-});
 
 $(document).ready(function() {
   var bgUrl = $('.thanks-container').data('background-url');
@@ -256,6 +282,13 @@ $(document).ready(function() {
     loop: true,
     nextHtml: '<svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
     prevHtml: '<svg class="arrow arrow_prev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M35 88.5c-.8 0-1.5-.3-2.1-.9-1.2-1.2-1.2-3.1 0-4.2l35.7-35.7-36-36c-1.2-1.2-1.2-3.1 0-4.2 1.2-1.2 3.1-1.2 4.2 0L77 47.7 37.2 87.6c-.6.6-1.4.9-2.2.9z"/></svg>',
+  });
+
+  $('[data-action="addWish"]').click(function() {
+    $.smoothScroll({
+      scrollElement: $('html, body'),
+      scrollTarget: '#rsvp'
+    });
   });
 
 });
