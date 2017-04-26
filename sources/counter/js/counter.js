@@ -7,9 +7,23 @@ $(document).ready(function() {
   var month = $('#counter').data('counter-month');
   var day = $('#counter').data('counter-day');
 
-  $('.counter__time').countdown({
-    until: new Date(year, month, day),
-    format: 'DHMS',
-    layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
-  });
+  var today = new Date();
+  var weddingDay = new Date(year, month, day);
+  if (weddingDay < today) {
+    $('.counter__time').countdown({
+      since: new Date(year, month, day + 1),
+      format: 'DHMS',
+      layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
+    });
+    $('.counter__title').text($('#counter').data('counter-expired-title'));
+    $('.counter__description').hide();
+
+  } else {
+    $('.counter__time').countdown({
+      until: new Date(year, month, day),
+      format: 'DHMS',
+      layout: makeTemplate('d') + makeTemplate('h') + makeTemplate('m') + makeTemplate('s')
+    });
+  }
+
 });
