@@ -13,14 +13,14 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify');
 
 var BUILD_DIR = './build/'
-	, TEMPLATES_WATCH_PATH = './sources/**/*.pug'
+	, TEMPLATES_WATCH_PATH = ['./**/*.pug']
 	, STYLESHEETS_PATHs = ['./sources/**/*.scss', './sources/**/*.sass', './sources/**/*.css']
 	, JS_PATH = ['./sources/**/*.js', '!./sources/js/*']
 	, ASSETS_DIR = './assets/**/*'
 	, FONTS_DIR = './sources/fonts/*';
 
 var dataFolder = './data/' + (util.env.data ? util.env.data : 'test');
-var mainDataFile = dataFolder + '/main.pug';
+var mainFile = './pages/' + (util.env.data ? util.env.data : 'test') + '.pug';
 
 gulp.task('default', ['build', 'connect', 'watch']);
 gulp.task('release', ['clean', 'pug', 'css-release', 'js-release', 'assets', 'fonts']);
@@ -36,7 +36,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('pug', function() {
-  return gulp.src(mainDataFile)
+  return gulp.src(mainFile)
   .pipe(pug())
 	.pipe(concat('index.html'))
 	.pipe(gulp.dest(BUILD_DIR))
@@ -96,5 +96,5 @@ gulp.task('connect', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch([TEMPLATES_WATCH_PATH, JS_PATH, STYLESHEETS_PATHs, ASSETS_DIR, mainDataFile], ['pug', 'css', 'js', 'assets', 'fonts']);
+	gulp.watch([TEMPLATES_WATCH_PATH, JS_PATH, STYLESHEETS_PATHs, ASSETS_DIR], ['pug', 'css', 'js', 'assets', 'fonts']);
 });
