@@ -9,7 +9,8 @@ var gulp = require('gulp'),
 	cleanCSS = require('gulp-clean-css'),
 	del = require('del'),
 	deploy = require('gulp-gh-pages'),
-	util = require('gulp-util');
+	util = require('gulp-util'),
+	uglify = require('gulp-uglify');
 
 var BUILD_DIR = './build/'
 	, HTML_PATH = './sources/**/*.html'
@@ -23,8 +24,8 @@ var BUILD_DIR = './build/'
 var dataFolder = './data/' + (util.env.data ? util.env.data : 'test');
 var mainDataFile = dataFolder + '/main.pug';
 
-gulp.task('default', ['clean', 'html', 'pug', 'css', 'js', 'assets', 'fonts', 'connect', 'watch']);
-gulp.task('release', ['clean', 'html', 'pug', 'css-release', 'js', 'assets', 'fonts']);
+gulp.task('default', ['build', 'connect', 'watch']);
+gulp.task('release', ['clean', 'pug', 'css-release', 'js-release', 'assets', 'fonts']);
 gulp.task('build', ['clean', 'pug', 'css', 'js', 'assets', 'fonts']);
 
 gulp.task('deploy', ['release'], function () {
@@ -71,6 +72,14 @@ gulp.task('css-release', function() {
 gulp.task('js', function() {
 	return gulp.src(JS_PATH)
 		.pipe(concat('main.js'))
+		.pipe(gulp.dest(BUILD_DIR))
+		.pipe(connect.reload());
+});
+
+gulp.task('js-release', function() {
+	return gulp.src(JS_PATH)
+		.pipe(concat('main.js'))
+		.pipe(uglify())
 		.pipe(gulp.dest(BUILD_DIR))
 		.pipe(connect.reload());
 });
