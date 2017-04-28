@@ -1,0 +1,71 @@
+include ui.pug
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    )
+    title Title
+    link(
+      href="https://fonts.googleapis.com/css?family=Comfortaa|Cormorant:600,600i,700|Open+Sans:300,400,400i,600,700&amp;subset=cyrillic"
+      rel="stylesheet"
+    )
+    link(
+      href="plugins/pagnificpopup/magnific-popup.css"
+      rel="stylesheet"
+    )
+    link(
+      href="plugins/lightslider/css/lightslider.min.css"
+      rel="stylesheet"
+    )
+    link(
+      href="plugins/animate.css/animate.min.css"
+      rel="stylesheet"
+    )
+    link(
+      href="plugins/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    )
+    link(
+      href="style.css"
+      rel="stylesheet"
+    )
+  body
+    include preloader/preloader.pug
+    include header/header.pug
+    main.content
+      include hero/hero.pug
+      include counter/counter.pug
+      include about/about.pug
+      include galery/galery.pug
+      include wishes/wishes.pug
+      include story/story.pug
+      include relatives/relatives.pug
+      include places/places.pug
+      include program/program.pug
+      include rsvp/rsvp.pug
+      include guests/guests.pug
+      include presents/presents.pug
+      include thanks/thanks.pug
+      include footer/footer.pug
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="plugins/countdown/jquery.plugin.min.js")
+    script(src="plugins/countdown/jquery.countdown.min.js")
+    //-script(src="plugins/countdown/jquery.countdown-uk.js")
+    script(src="plugins/countdown/jquery.countdown-ru.js")
+    script(src="plugins/pagnificpopup/jquery.magnific-popup.min.js")
+    script(src="plugins/lightslider/js/lightslider.min.js")
+    script(src="plugins/inview/jquery.inview.min.js")
+    script(src="plugins/pace/pace.min.js")
+    script(src="plugins/smooth-scroll/jquery.smooth-scroll.min.js")
+    script(src="plugins/owlcarousel/owl.carousel.min.js")
+    script(src="main.js")
+    script(
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvUfj9UoPHJazpZe4TVmRS7ZiwtFwIGJQ&callback=initMap"
+      async
+      defer
+    )

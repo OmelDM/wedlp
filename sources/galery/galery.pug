@@ -4,8 +4,8 @@ section.galery-container#gallery
       data-animation = "fadeInUp"
     )
       = ui.gallery.title
-    .gallery__content.owl-carousel
-      each galery in data.gallery.list
+    each galery in data.gallery.list
+      .gallery__content.owl-carousel
         each photo in galery.photos
           .galery__item
             a.galery__link(
@@ -13,12 +13,12 @@ section.galery-container#gallery
                 data-magnigic-popup
               )
               img.galery__img(src = photo)
-        if (galery.videos)
-          each video in galery.videos
-            .galery__item
-              a.galery__link.galery__link_video.mfp-iframe(
-                  href = video.img
-                  data-mfp-src = video.src
-                  data-magnigic-popup
-                )
-                img.galery__img.galery__img_video(src = video.img)
+    //- if (galery.videos)
+    //-   each video in galery.videos
+    //-     .galery__item
+    //-       a.galery__link.galery__link_video.mfp-iframe(
+    //-           href = video.img
+    //-           data-mfp-src = video.src
+    //-           data-magnigic-popup
+    //-         )
+    //-         img.galery__img.galery__img_video(src = video.img)
