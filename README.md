@@ -1,9 +1,9 @@
-#Readme
+# Readme
 
-##Required tools
+## Required tools
 Before start you have to install `Node JS` and `gulp-cli`
 
-##Setup
+## Setup
 1. Clone the repository:
 ````
 git clone https://github.com/OmelDM/wedlp.git
@@ -13,13 +13,13 @@ git clone https://github.com/OmelDM/wedlp.git
 npm install
 ````
 
-##Gulp tasks
+## Gulp tasks
 1. `build` compiles sources, copies images, fonts, etc. to `build` directory
 2. `release` compiles minified sources, copies images, fonts, etc. to `build` directory
 3. `default` runs `build` task and starts watcher and local server
 4. `deploy` runs `release` task and pushes `build` directory's content to `gh-pages` branch
 
-##Data
+## Data
 Data that could be changed is separated from templates sources to `data` directory.
 By default, all gulp tasks used test data from `data/test` directory.
 To use custom data, add `--data=[name_of_directory_with_data]` parameter to gulp command.
