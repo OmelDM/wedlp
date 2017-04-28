@@ -1,24 +1,39 @@
+-
+  function getVideoThumbnail(src) {
+    var videoID = '';
+    var result = '';
+    if (src.includes('youtube')) {
+      videoID = src.split('v=')[1];
+      result = 'http://img.youtube.com/vi/' + videoID + '/0.jpg';
+    } else if (src.includes('vimeo')) {
+      result = 'https://i.vimeocdn.com/video/631618781_640.jpg';
+    }
+    return result;
+  }
+
 section.galery-container#gallery
   .galery
     h1.galery__title(
       data-animation = "fadeInUp"
     )
       = ui.gallery.title
-    each galery in data.gallery.list
+    each gallery in data.gallery.list
       .gallery__content.owl-carousel
-        each photo in galery.photos
-          .galery__item
-            a.galery__link(
-                href = photo
-                data-magnigic-popup
-              )
-              img.galery__img(src = photo)
-    //- if (galery.videos)
-    //-   each video in galery.videos
-    //-     .galery__item
-    //-       a.galery__link.galery__link_video.mfp-iframe(
-    //-           href = video.img
-    //-           data-mfp-src = video.src
-    //-           data-magnigic-popup
-    //-         )
-    //-         img.galery__img.galery__img_video(src = video.img)
+        if (gallery.videos)
+          each video in gallery.videos
+            - var thumbnail = getVideoThumbnail(video.src)
+            .galery__item
+              a.galery__link.galery__link_video.mfp-iframe(
+                  href = thumbnail
+                  data-mfp-src = video.src
+                  data-magnigic-popup
+                )
+                img.galery__img.galery__img_video(src = thumbnail)
+        if (gallery.photos)
+          each photo in gallery.photos
+            .galery__item
+              a.galery__link(
+                  href = photo
+                  data-magnigic-popup
+                )
+                img.galery__img(src = photo)
