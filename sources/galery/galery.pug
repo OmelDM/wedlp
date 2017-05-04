@@ -18,7 +18,9 @@ section.galery-container#gallery
     )
       = ui.gallery.title
     each gallery in data.gallery.list
-      .gallery__content.owl-carousel
+      .galery__name
+        = gallery.title
+      .owl-carousel
         if (gallery.videos)
           each video in gallery.videos
             - var thumbnail = getVideoThumbnail(video.src)
